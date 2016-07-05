@@ -12,16 +12,13 @@ Compatibility: Arduino UNO R3
 Phi Luu
 David Douglas High School
 Portland, OR
-July 03, 2016
+July 05, 2016
 
 *******************************************************************************/
 
 //**********Required Hardware I/O Connections**********
-// Photocell connected to A0
-// LED connected to 12
-
-const int led = 12;         // set led as 12 alias
-const int photo = A0;       // set photo as A0 alias
+const int led = 12;         // connect LED to 12
+const int photo = A0;       // connect photocell to A0
 
 //**********setup**********
 // Put setup code here, to run once
@@ -37,11 +34,15 @@ void setup() {
 // Outputs: None
 void loop() {
     int photoVal = analogRead(photo);   // read light amount from photocell
-    if (photoVal < 100) {         // when you enter your room and it's too dark
-        digitalWrite(led, HIGH);  // then it will turn the light on for you
+    // when you enter your room and it's too dark
+    if (photoVal < 100) {
+        // it will turn the light on for you
+        digitalWrite(led, HIGH);
     }
-    else {                        // if it's bright enough
-        digitalWrite(led, LOW);   // then turn of the LED to save energy
+    // if it's bright enough
+    else {
+        // turn of the LED to save energy
+        digitalWrite(led, LOW);
     }
 }
 
