@@ -1,7 +1,0 @@
-This folder saves preferences for Arduino IDE
-
-Default Sketchbook:
-    Copy file "BareMinimum.ino" to C:\Program Files (x86)\Arduino\examples\01.Basics\BareMinimum and replace the old file
-
-IDE preference:
-    Copy file "preferences.txt" to C:\Users\Phi\AppData\Local\Arduino15 and replace the old file

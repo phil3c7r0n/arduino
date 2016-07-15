@@ -12,7 +12,7 @@ Compatibility: Arduino UNO R3
 Phi Luu
 David Douglas High School
 Portland, OR
-July 03, 2016
+Updated July 14, 2016
 
 *******************************************************************************/
 

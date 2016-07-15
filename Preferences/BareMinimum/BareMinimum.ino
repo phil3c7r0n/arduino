@@ -11,7 +11,8 @@ Compatibility: Arduino UNO R3
 Phi Luu
 David Douglas High School
 Portland, OR
-<Date>
+Created <Date>
+Updated <Date>
 
 *******************************************************************************/
 
