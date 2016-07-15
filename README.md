@@ -21,5 +21,5 @@ C:\Users\{your name}\AppData\Local\Arduino15
 and replace the old file.
 
 ## Issues
-If you anything wrong, please feel free to
+If you see anything wrong, please feel free to
 [let me know](https://github.com/phil3c7r0n/arduino/issues/new).
