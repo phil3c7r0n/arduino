@@ -1,8 +1,8 @@
-/*******************************************************************************
+/*****************************************************************************
 
-Arduino Projects Book - Project 07: Keyboard Instrument
+Project Name: Arduino Projects Book - Project 07: Keyboard Instrument
 
-Name: keyboard_instrument.ino
+File Name: keyboard_instrument.ino
 
 Description: Simulate keys C, D, E, and F of the real piano
 using push buttons and piezo buzzer
@@ -10,18 +10,18 @@ using push buttons and piezo buzzer
 Compatibility: Arduino UNO R3
 
 Phi Luu
-David Douglas High School
-Portland, OR
-Updated July 14, 2016
+Portland, Oregon, United States
+Created March 05, 2016
+Updated July 17, 2016
 
-*******************************************************************************/
-
-// set up frequencies for C, D, E, and F in the real piano
-const int notes[] = {262, 294, 330, 349};
+*****************************************************************************/
 
 //**********Required Hardware I/O Connections**********
 const int piezo = 8;        // connect buzzer to 8
 const int keyboard = A0;    // connect keyboard to A0
+
+// define frequencies for C, D, E, and F in the real piano
+const int notes[] = {262, 294, 330, 349};
 
 // baud rate for serial monitor
 const unsigned int BAUD_RATE = 9600;
@@ -31,8 +31,8 @@ const unsigned int BAUD_RATE = 9600;
 // Inputs: None
 // Outputs: None
 void setup() {
-    Serial.begin(BAUD_RATE);       // start the serial monitor
-    pinMode(piezo, OUTPUT);   // set piezo as OUTPUT
+    Serial.begin(BAUD_RATE);    // start the serial monitor
+    pinMode(piezo, OUTPUT);     // set piezo as OUTPUT
 }
 
 //**********loop**********
@@ -65,4 +65,3 @@ void loop() {
         noTone(piezo);              // mute the piezo
     }
 }
-

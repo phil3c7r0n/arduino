@@ -1,27 +1,26 @@
-/*******************************************************************************
+/*****************************************************************************
 
-<Name of Project>
+Project Name: <Name of Project>
 
-Name: <Name of File>.ino
+File Name: <Name of File>.ino
 
 Description:
 
 Compatibility: Arduino UNO R3
 
 Phi Luu
-David Douglas High School
-Portland, OR
+Portland, Oregon, United States
 Created <Date>
 Updated <Date>
 
-*******************************************************************************/
+*****************************************************************************/
 
 //**********setup**********
 // Put setup code here, to run once
 // Inputs: None
 // Outputs: None
 void setup() {
-    
+
 }
 
 //**********loop**********
@@ -29,6 +28,5 @@ void setup() {
 // Inputs: None
 // Outputs: None
 void loop() {
-    
-}
 
+}

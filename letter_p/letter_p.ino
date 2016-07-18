@@ -1,19 +1,19 @@
-/*******************************************************************************
+/*****************************************************************************
 
-DIY Arduino - Project 01: Letter P
+Project Name: DIY Arduino - Project 01: Letter P
 
-Name: letter_p.ino
+File Name: letter_p.ino
 
 Description: Make a beautiful effect of letter P
- 
+
 Compatibility: Arduino UNO R3
 
 Phi Luu
-David Douglas High School
-Portland, OR
-Updated July 14, 2016
+Portland, Oregon, United States
+Created September 29, 2015
+Updated July 17, 2016
 
-*******************************************************************************/
+*****************************************************************************/
 
 // LEDs arrangement
 // LED4 LED5
@@ -51,12 +51,12 @@ void loop() {
         digitalWrite(pinNumber, LOW);   // turn off all LED
     }
     digitalWrite(LED1, HIGH);  // start with LED 1
-    delay(TIME);            // flash this LED for TIME milliseconds
+    delay(TIME);               // flash this LED for TIME milliseconds
     // create a "running" effect on LEDs
     for (byte pinNumber = LED1; pinNumber <= LED5; pinNumber++) {
         digitalWrite(pinNumber, LOW);       // turn off this LED
         digitalWrite(pinNumber + 1, HIGH);  // and turn on next LED
-        delay(TIME);                    // turn on for TIME milliseconds
+        delay(TIME);                        // turn on for TIME milliseconds
     }
     // when completes letter P, go straight down and repeat it again
     digitalWrite(LED6, LOW);
@@ -68,4 +68,3 @@ void loop() {
     digitalWrite(LED2, LOW);
     digitalWrite(LED1, HIGH);
 }
-

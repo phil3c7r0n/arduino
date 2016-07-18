@@ -1,19 +1,19 @@
-/*******************************************************************************
+/*****************************************************************************
 
-Arduino Projects Book - Project 05: Mood Cue
+Project Name: Arduino Projects Book - Project 05: Mood Cue
 
-Name: mood_cue.ino
+File Name: mood_cue.ino
 
 Description: Express your feeling by a servo motor
 
 Compatibility: Arduino UNO R3
 
 Phi Luu
-David Douglas High School
-Portland, OR
-Updated July 14, 2016
+Portland, Oregon, United States
+Created November 21, 2015
+Updated July 17, 2016
 
-*******************************************************************************/
+*****************************************************************************/
 
 #include <Servo.h>       // include Servo library for servo motors
 
@@ -48,9 +48,8 @@ void loop() {
     Serial.print(potVal);         // print potVal on the Serial Monitor
     angle = map(potVal, 0, 1023, 0, 179);   // map potVal to angle
     Serial.print(", angle: ");
-    Serial.print(angle);    // print angle on the Serial Monitor
-    myServo.write(angle);   // run the servo motor with the angle above
+    Serial.print(angle);          // print angle on the Serial Monitor
+    myServo.write(angle);         // run the servo motor with the angle above
     Serial.println();
-    delay(15);              // delay helps the servo stable
+    delay(15);                    // delay helps the servo stable
 }
-

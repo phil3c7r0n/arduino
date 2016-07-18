@@ -1,19 +1,19 @@
-/*******************************************************************************
+/*****************************************************************************
 
-Arduino Projects Book - Project 03: Love-O-Meter
+Project Name: Arduino Projects Book - Project 03: Love-O-Meter
 
-Name: love_o_meter.ino
+File Name: love_o_meter.ino
 
 Description: Using the temperature sensor, test how hot you really are!
- 
+
 Compatibility: Arduino UNO R3
 
 Phi Luu
-David Douglas High School
-Portland, OR
-Updated July 14, 2016
+Portland, Oregon, United States
+Created September 30, 2015
+Updated July 17, 2016
 
-*******************************************************************************/
+*****************************************************************************/
 
 //**********Required Hardware I/O Connections**********
 const byte LED1 = 2;             // connect LED 1 to 2
@@ -29,7 +29,7 @@ const float baseLineTemp = 20.0;
 // Inputs: None
 // Outputs: None
 void setup() {
-    Serial.begin(9600);               // start Serial Monitor
+    Serial.begin(9600);                 // start Serial Monitor
     for (byte pinNumber = LED1; pinNumber <= LED3; pinNumber++) {
         pinMode(pinNumber, OUTPUT);     // quickly set LED pins as OUTPUT
         digitalWrite(pinNumber, LOW);   // quickly turn off all LEDs
@@ -41,7 +41,8 @@ void setup() {
 // Inputs: None
 // Outputs: None
 void loop() {
-    unsigned int sensorVal = analogRead(sensorPin);    // read value from sensorPin
+    // read value from sensorPin
+    unsigned int sensorVal = analogRead(sensorPin);
     Serial.print("Sensor value: ");
     Serial.println(sensorVal);    // print sensorVal on Serial Monitor
     float voltage = (sensorVal / 1024.0) * 5.0;   // map sensorVal to voltage
@@ -52,7 +53,7 @@ void loop() {
     Serial.print("Degrees C: ");
     Serial.println(temperature);  // print temperature on Serial Monitor
     Serial.println();
-    
+
     if ((temperature >= baseLineTemp)
     && (temperature < baseLineTemp + 2)) {
         // level 1: from baseLineTemp to baseLineTemp + 2
@@ -87,4 +88,3 @@ void loop() {
         digitalWrite(LED3, HIGH);
     }
 }
-
