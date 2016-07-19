@@ -55,7 +55,7 @@ void loop() {
     Serial.println();
 
     if ((temperature >= baseLineTemp)
-    && (temperature < baseLineTemp + 2)) {
+            && (temperature < baseLineTemp + 2)) {
         // level 1: from baseLineTemp to baseLineTemp + 2
         digitalWrite(LED1, HIGH);
         digitalWrite(LED2, HIGH);  // all LEDs turn on
@@ -68,14 +68,14 @@ void loop() {
         digitalWrite(LED3, LOW);
     }
     else if ((temperature >= baseLineTemp + 2)
-    && (temperature < baseLineTemp + 4)) {
+            && (temperature < baseLineTemp + 4)) {
         // level 2: from baseLineTemp + 2 to baseLineTemp + 4
         digitalWrite(LED1, HIGH);
         digitalWrite(LED2, LOW);   // LED 1 turns on, LED 2 and LED 3 turn off
         digitalWrite(LED3, LOW);
     }
     else if ((temperature >= baseLineTemp + 4)
-    && (temperature < baseLineTemp + 6)) {
+            && (temperature < baseLineTemp + 6)) {
         // level 3: from baseLineTemp + 4 to baseLineTemp + 6
         digitalWrite(LED1, LOW);
         digitalWrite(LED2, HIGH);  // LED 2 turns on, LED 1 and LED 3 turn off
