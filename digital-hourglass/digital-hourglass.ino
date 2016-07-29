@@ -25,11 +25,11 @@ const byte led3Pin = 4;     // connect led3 to 4
 const byte led2Pin = 3;     // connect led2 to ~3
 const byte led1Pin = 2;     // connect led1 to 2
 
-unsigned long prevTime = 0;         // hold the time
+unsigned long prevTime = 0; // hold the time
 byte currSwitchState = 0;   // hold the current switch state
 byte prevSwitchState = 0;   // hold the previous switch state
 byte currLed = led1Pin;     // init the current led to be led1
-unsigned long interval = 2000;      // 5 minutes = 300,000 milliseconds
+unsigned long interval = 2000;      // 2 seconds = 2,000 milliseconds
                                     // between each event
 
 //**********setup**********
@@ -60,11 +60,11 @@ void loop() {
         if (currLed == led6Pin) {
             // make a flashing effect
             // indicating that time is up
-            for (byte t = 0; t < 3; t++) {
+            for (byte t = 0; t < 4; t++) {
                 for (byte led = led1Pin; led <= led6Pin; led++) {
-                    digitalWrite(led, HIGH);    // flashing on...
+                    digitalWrite(led, HIGH);    // flashing on
                 }
-                if (t < 2) {
+                if (t < 3) {
                     delay(250);     // for 0.25 second
                 }
                 else {
@@ -98,8 +98,6 @@ void loop() {
         // store the current time
         prevTime = currTime;
     }
-    // otherwise, store the current switch state
-    else {
-        prevSwitchState = currSwitchState;
-    }
+    // store the current switch state
+    prevSwitchState = currSwitchState;
 }
