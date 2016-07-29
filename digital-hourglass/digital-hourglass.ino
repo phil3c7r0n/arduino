@@ -4,7 +4,7 @@ Project Name: Arduino Projects Book - Project 08: Digital Hourglass
 
 File Name: digital-hourglass.ino
 
-Description: A digital hourglass that turns on an LED every 10 minutes.
+Description: A digital hourglass that turns on a LED every 2 seconds.
   It works just like an hourglass, but digitally.
 
 Compatibility: Arduino UNO R3
@@ -12,7 +12,7 @@ Compatibility: Arduino UNO R3
 Phi Luu
 Portland, Oregon, United States
 Created July 27, 2016
-Updated July 27, 2016
+Updated July 28, 2016
 
 *****************************************************************************/
 
