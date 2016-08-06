@@ -7,12 +7,12 @@ File Name: digital-hourglass.ino
 Description: A digital hourglass that turns on a LED every 2 seconds.
   It works just like an hourglass, but digitally.
 
-Compatibility: Arduino UNO R3
+Compatibility: Arduino UNO
 
 Phi Luu
 Portland, Oregon, United States
 Created July 27, 2016
-Updated July 28, 2016
+Updated August 06, 2016
 
 *****************************************************************************/
 

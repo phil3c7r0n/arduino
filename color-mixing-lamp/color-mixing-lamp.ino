@@ -7,12 +7,12 @@ File Name: color_mixing_lamp.ino
 Description: Indicate different colors on the RGB LED
 according to the amount of light each photocell receives
 
-Compatibility: Arduino UNO R3
+Compatibility: Arduino UNO
 
 Phi Luu
 Portland, Oregon, United States
 Created October 25, 2015
-Updated July 17, 2016
+Updated August 06, 2016
 
 *****************************************************************************/
 

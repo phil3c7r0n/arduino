@@ -7,12 +7,12 @@ File Name: dark_room.ino
 Description: Automatically turn on the LED when it's dark
 Find the light switch when you come home from work at night
 
-Compatibility: Arduino UNO R3
+Compatibility: Arduino UNO
 
 Phi Luu
 Portland, Oregon, United States
 Created December 13, 2015
-Updated July 17, 2016
+Updated August 06, 2016
 
 *****************************************************************************/
 

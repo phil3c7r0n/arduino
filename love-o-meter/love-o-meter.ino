@@ -6,12 +6,12 @@ File Name: love_o_meter.ino
 
 Description: Using the temperature sensor, test how hot you really are!
 
-Compatibility: Arduino UNO R3
+Compatibility: Arduino UNO
 
 Phi Luu
 Portland, Oregon, United States
 Created September 30, 2015
-Updated July 17, 2016
+Updated August 06, 2016
 
 *****************************************************************************/
 

@@ -6,12 +6,12 @@ File Name: light_theremin.ino
 
 Description: Make a light-based theremin using photocells and a buzzer
 
-Compatibility: Arduino UNO R3
+Compatibility: Arduino UNO
 
 Phi Luu
 Portland, Oregon, United States
 Created January 10, 2016
-Updated July 17, 2016
+Updated August 06, 2016
 
 *****************************************************************************/
 

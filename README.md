@@ -1,14 +1,14 @@
 # arduino
 
-This repository contains my DIY Arduino projects and 15 projects in Arduino Projects Book. I log them on [my website](philectron.github.io).
+This repository contains my DIY Arduino projects and 15 projects in Arduino Projects Book. I log them on [my website](https://philectron.github.io/categories/#arduino).
 
 
 
 ## Preferences
 
-To install the default sketchbook, copy [default sketchbook](/Preferences/BareMinimum.ino) to `C:\Program Files (x86)\Arduino\examples\01.Basics\BareMinimum` then replace the old file and mark the file as Read-Only.
+To install the default sketchbook, customize this [BareMinimum.ino](/Preferences/BareMinimum.ino). Next, copy to `%programfiles(x86)%\Arduino\examples\01.Basics\BareMinimum`, then replace the old file and mark the file as **Read-Only**.
 
-To install preferences for Arduino IDE, copy [IDE settings](/Preferences/preferences.txt) to `C:\Users\{your name}\AppData\Local\Arduino15` and replace the old file.
+To install preferences for Arduino IDE, customize this [preferences.txt](/Preferences/preferences.txt). Next, copy the file to `%localappdata%\Arduino15` and replace the old one.
 
 
 

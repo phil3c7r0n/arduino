@@ -7,12 +7,12 @@ File Name: keyboard_instrument.ino
 Description: Simulate keys C, D, E, and F of the real piano
 using push buttons and piezo buzzer
 
-Compatibility: Arduino UNO R3
+Compatibility: Arduino UNO
 
 Phi Luu
 Portland, Oregon, United States
 Created March 05, 2016
-Updated July 17, 2016
+Updated August 06, 2016
 
 *****************************************************************************/
 

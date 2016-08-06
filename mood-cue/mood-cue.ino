@@ -6,12 +6,12 @@ File Name: mood_cue.ino
 
 Description: Express your feeling by a servo motor
 
-Compatibility: Arduino UNO R3
+Compatibility: Arduino UNO
 
 Phi Luu
 Portland, Oregon, United States
 Created November 21, 2015
-Updated July 17, 2016
+Updated August 06, 2016
 
 *****************************************************************************/
 

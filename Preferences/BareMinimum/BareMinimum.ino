@@ -1,17 +1,17 @@
 /*****************************************************************************
 
-Project Name: <Name of Project>
+Project Name: {Name of Project}
 
-File Name: <Name of File>.ino
+File Name: {Name of File}.ino
 
-Description:
+Description: {Type Desciption Here}
 
-Compatibility: Arduino UNO R3
+Compatibility: Arduino {Type}
 
 Phi Luu
 Portland, Oregon, United States
-Created <Date>
-Updated <Date>
+Created {Date}
+Updated {Date}
 
 *****************************************************************************/
 
@@ -20,7 +20,7 @@ Updated <Date>
 // Inputs: None
 // Outputs: None
 void setup() {
-
+    
 }
 
 //**********loop**********
@@ -28,5 +28,5 @@ void setup() {
 // Inputs: None
 // Outputs: None
 void loop() {
-
+    
 }
