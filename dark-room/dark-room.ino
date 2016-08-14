@@ -1,20 +1,20 @@
-/*****************************************************************************
-
-Project Name: DIY Arduino - Project 02: Dark Room
-
-File Name: dark_room.ino
-
-Description: Automatically turn on the LED when it's dark
-Find the light switch when you come home from work at night
-
-Compatibility: Arduino UNO
-
-Phi Luu
-Portland, Oregon, United States
-Created December 13, 2015
-Updated August 06, 2016
-
-*****************************************************************************/
+//****************************************************************************
+//
+// Project Name: DIY Arduino - Project 02: Dark Room
+//
+// File Name: dark_room.ino
+//
+// Description: Automatically turn on the LED when it's dark
+// Find the light switch when you come home from work at night
+//
+// Compatibility: Arduino UNO
+//
+// Phi Luu
+// Portland, Oregon, United States
+// Created December 13, 2015
+// Updated August 13, 2016
+//
+//****************************************************************************
 
 //**********Required Hardware I/O Connections**********
 const int led = 12;         // connect LED to 12

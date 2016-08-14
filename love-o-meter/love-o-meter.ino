@@ -1,19 +1,19 @@
-/*****************************************************************************
-
-Project Name: Arduino Projects Book - Project 03: Love-O-Meter
-
-File Name: love_o_meter.ino
-
-Description: Using the temperature sensor, test how hot you really are!
-
-Compatibility: Arduino UNO
-
-Phi Luu
-Portland, Oregon, United States
-Created September 30, 2015
-Updated August 06, 2016
-
-*****************************************************************************/
+//****************************************************************************
+//
+// Project Name: Arduino Projects Book - Project 03: Love-O-Meter
+//
+// File Name: love_o_meter.ino
+//
+// Description: Using the temperature sensor, test how hot you really are!
+//
+// Compatibility: Arduino UNO
+//
+// Phi Luu
+// Portland, Oregon, United States
+// Created September 30, 2015
+// Updated August 13, 2016
+//
+//****************************************************************************
 
 //**********Required Hardware I/O Connections**********
 const byte LED1 = 2;             // connect LED 1 to 2

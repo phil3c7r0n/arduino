@@ -1,20 +1,20 @@
-/*****************************************************************************
-
-Project Name: Arduino Projects Book - Project 04: Color Mixing Lamp
-
-File Name: color_mixing_lamp.ino
-
-Description: Indicate different colors on the RGB LED
-according to the amount of light each photocell receives
-
-Compatibility: Arduino UNO
-
-Phi Luu
-Portland, Oregon, United States
-Created October 25, 2015
-Updated August 06, 2016
-
-*****************************************************************************/
+//****************************************************************************
+//
+// Project Name: Arduino Projects Book - Project 04: Color Mixing Lamp
+//
+// File Name: color_mixing_lamp.ino
+//
+// Description: Indicate different colors on the RGB LED
+// according to the amount of light each photocell receives
+//
+// Compatibility: Arduino UNO
+//
+// Phi Luu
+// Portland, Oregon, United States
+// Created October 25, 2015
+// Updated August 13, 2016
+//
+//****************************************************************************
 
 //**********Required Hardware I/O Connections**********
 const byte redLEDPin = 11;       // connect red pin of the RGB LED to ~11

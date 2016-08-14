@@ -1,19 +1,19 @@
-/*****************************************************************************
-
-Project Name: DIY Arduino - Project 01: Letter P
-
-File Name: letter_p.ino
-
-Description: Make a beautiful effect of letter P
-
-Compatibility: Arduino UNO
-
-Phi Luu
-Portland, Oregon, United States
-Created September 29, 2015
-Updated August 06, 2016
-
-*****************************************************************************/
+// ****************************************************************************
+//
+// Project Name: DIY Arduino - Project 01: Letter P
+//
+// File Name: letter_p.ino
+//
+// Description: Make a beautiful effect of letter P
+//
+// Compatibility: Arduino UNO
+//
+// Phi Luu
+// Portland, Oregon, United States
+// Created September 29, 2015
+// Updated August 13, 2016
+//
+// ****************************************************************************
 
 // LEDs arrangement
 // LED4 LED5

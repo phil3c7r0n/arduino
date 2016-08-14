@@ -1,20 +1,20 @@
-/*****************************************************************************
-
-Project Name: Arduino Projects Book - Project 07: Keyboard Instrument
-
-File Name: keyboard_instrument.ino
-
-Description: Simulate keys C, D, E, and F of the real piano
-using push buttons and piezo buzzer
-
-Compatibility: Arduino UNO
-
-Phi Luu
-Portland, Oregon, United States
-Created March 05, 2016
-Updated August 06, 2016
-
-*****************************************************************************/
+//****************************************************************************
+//
+// Project Name: Arduino Projects Book - Project 07: Keyboard Instrument
+//
+// File Name: keyboard_instrument.ino
+//
+// Description: Simulate keys C, D, E, and F of the real piano
+// using push buttons and piezo buzzer
+//
+// Compatibility: Arduino UNO
+//
+// Phi Luu
+// Portland, Oregon, United States
+// Created March 05, 2016
+// Updated August 13, 2016
+//
+//****************************************************************************
 
 //**********Required Hardware I/O Connections**********
 const int piezo = 8;        // connect buzzer to 8
@@ -65,3 +65,4 @@ void loop() {
         noTone(piezo);              // mute the piezo
     }
 }
+a
