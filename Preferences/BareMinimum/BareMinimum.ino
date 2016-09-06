@@ -1,32 +1,27 @@
 //****************************************************************************
 //
-// Project Name: {Name of Project}
+// Project Name: Name_of_Project
 //
-// File Name: {Name of File}.ino
+// File Name: Name_of_File.ino
 //
-// Description: {Type Desciption Here}
+// Description: Type_Desciption_Here
 //
-// Compatibility: Arduino {Type}
+// Compatibility: Arduino Type_of_Arduino
 //
 // Phi Luu
 // Portland, Oregon, United States
-// Created {Date}
-// Updated {Date}
+// Created Created_Date
+// Updated Updated_Date
 //
 //****************************************************************************
 
-//**********setup**********
 // Put setup code here, to run once
-// Inputs: None
-// Outputs: None
 void setup() {
 
 }
 
-//**********loop**********
 // Put main code here, to run repeatedly
-// Inputs: None
-// Outputs: None
 void loop() {
 
 }
+
