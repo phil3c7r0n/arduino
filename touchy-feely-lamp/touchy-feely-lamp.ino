@@ -49,6 +49,6 @@ void loop() {
         digitalWrite(ledPin, LOW);
     }
 
-    // delay helps stablizing the sensor
+    // delay helps stabilize the sensor
     delay(10);
 }
