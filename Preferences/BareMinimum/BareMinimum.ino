@@ -4,9 +4,9 @@
 //
 // File Name: Name_of_File.ino
 //
-// Description: Type_Desciption_Here
+// Description: File_Description
 //
-// Compatibility: Arduino Type_of_Arduino
+// Compatibility: Arduino Arduino_Type
 //
 // Phi Luu
 // Portland, Oregon, United States
@@ -15,13 +15,18 @@
 //
 //****************************************************************************
 
-// Put setup code here, to run once
+/**
+ * put setup code here, to run once
+ * @method setup
+ */
 void setup() {
 
 }
 
-// Put main code here, to run repeatedly
+/**
+ * put main code here, to run repeatedly
+ * @method loop
+ */
 void loop() {
 
 }
-
