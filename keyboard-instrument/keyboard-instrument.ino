@@ -12,7 +12,7 @@
 // Phi Luu
 // Portland, Oregon, United States
 // Created March 05, 2016
-// Updated August 13, 2016
+// Updated December 28, 2016
 //
 //****************************************************************************
 
@@ -21,7 +21,7 @@ const int piezo = 8;        // connect buzzer to 8
 const int keyboard = A0;    // connect keyboard to A0
 
 // define frequencies for C, D, E, and F in the real piano
-const int notes[] = {262, 294, 330, 349};
+const int notes[] = { 262, 294, 330, 349 };
 
 // baud rate for serial monitor
 const unsigned int BAUD_RATE = 9600;
@@ -42,6 +42,7 @@ void setup() {
 void loop() {
     // read input from the keyboard and set to keyVal
     unsigned int keyVal = analogRead(keyboard);
+
     Serial.print("keyVal = ");
     Serial.println(keyVal); // indicate the value of keyVal for debugging
     // if the first button is pressed
@@ -65,4 +66,3 @@ void loop() {
         noTone(piezo);              // mute the piezo
     }
 }
-a

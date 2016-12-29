@@ -12,7 +12,7 @@
 // Phi Luu
 // Portland, Oregon, United States
 // Created September 06, 2016
-// Updated September 06, 2016
+// Updated December 28, 2016
 //
 //****************************************************************************
 
@@ -61,8 +61,7 @@ void loop() {
         if (switchVal == HIGH) {
             lockTheBox();
         }
-    }
-    else {
+    } else {
         knockVal = analogRead(piezoPin);
         // require maxNumKnock valid knocks
         if (numKnocks < maxNumKnock && knockVal > 0) {
@@ -118,8 +117,7 @@ boolean checkForKnock(byte aKnockVal) {
         Serial.print("Valid knock value: ");
         Serial.println(aKnockVal);
         return true;
-    }
-    else {
+    } else {
         Serial.print("Invalid knock value: ");
         Serial.println(aKnockVal);
         return false;

@@ -11,18 +11,18 @@
 // Phi Luu
 // Portland, Oregon, United States
 // Created January 10, 2016
-// Updated August 13, 2016
+// Updated December 28, 2016
 //
 //****************************************************************************
 
 //**********Required Hardware I/O Connections**********
-const byte sensorPin = A0;     // connect photocell to A0
-const byte ledPin = 4;         // connect LED to 4
-const byte piezoPin = 2;       // connect buzzer to 2
+const byte sensorPin = A0;      // connect photocell to A0
+const byte ledPin = 4;          // connect LED to 4
+const byte piezoPin = 2;        // connect buzzer to 2
 
-unsigned int sensorValue;        // declare sensorValue
-unsigned int sensorHigh = 0;     // 0 as the initial min of the photocell
-unsigned int sensorLow = 1023;   // 1023 as the initial max of the photocell
+unsigned int sensorValue;       // declare sensorValue
+unsigned int sensorHigh = 0;    // 0 as the initial min of the photocell
+unsigned int sensorLow = 1023;  // 1023 as the initial max of the photocell
 
 //**********setup**********
 // Put setup code here, to run once
@@ -35,14 +35,14 @@ void setup() {
     while (millis() < 5000) {
         sensorValue = analogRead(sensorPin);    // read sensorPin value
         if (sensorValue > sensorHigh) {
-            sensorHigh = sensorValue;   // set upper bound of the photocell
+            sensorHigh = sensorValue;           // set upper bound of the photocell
         }
         if (sensorValue < sensorLow) {
-            sensorLow = sensorValue;    // set lower bound of the photocell
+            sensorLow = sensorValue;            // set lower bound of the photocell
         }
     }
     // calibration completed
-    digitalWrite(ledPin, LOW);  // red light turned off
+    digitalWrite(ledPin, LOW);                  // red light turned off
 }
 
 //**********loop**********

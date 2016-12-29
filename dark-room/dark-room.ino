@@ -12,7 +12,7 @@
 // Phi Luu
 // Portland, Oregon, United States
 // Created December 13, 2015
-// Updated August 13, 2016
+// Updated December 28, 2016
 //
 //****************************************************************************
 
@@ -34,6 +34,7 @@ void setup() {
 // Outputs: None
 void loop() {
     int photoVal = analogRead(photo);   // read light amount from photocell
+
     // when you enter your room and it's too dark
     if (photoVal < 100) {
         // it will turn the light on for you

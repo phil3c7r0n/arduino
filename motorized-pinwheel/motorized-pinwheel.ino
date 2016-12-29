@@ -11,7 +11,7 @@
 // Phi Luu
 // Portland, Oregon, United States
 // Created August 13, 2016
-// Updated August 13, 2016
+// Updated December 28, 2016
 //
 //****************************************************************************
 
@@ -34,9 +34,10 @@ void setup() {
 // Outputs: None
 void loop() {
     byte switchState = digitalRead(switchPin);   // read input from the switch
+
     // if the switch is pressed
     if (switchState) {
-        digitalWrite(motorPin, HIGH);       // spin the motor
+        digitalWrite(motorPin, HIGH);           // spin the motor
     }
     // otherwise
     else {

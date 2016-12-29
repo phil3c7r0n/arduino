@@ -12,14 +12,14 @@
 // Phi Luu
 // Portland, Oregon, United States
 // Created December 18, 2016
-// Updated December 18, 2016
+// Updated December 28, 2016
 //
 //****************************************************************************
 
 //**********Required Hardware Connections**********
-const byte sendingPin = 4;        // capacitance sending pin connected to 4
-const byte receivingPin = 2;      // capacitance receiving pin connected to 2
-const byte ledPin = 12;           // indicator LED pin connected to 12
+const byte sendingPin = 4;          // capacitance sending pin connected to 4
+const byte receivingPin = 2;        // capacitance receiving pin connected to 2
+const byte ledPin = 12;             // indicator LED pin connected to 12
 
 #include <CapacitiveSensor.h>
 CapacitiveSensor capSensor = CapacitiveSensor(sendingPin, receivingPin);
@@ -38,14 +38,14 @@ void setup() {
 void loop() {
     // read 30 samples at a time
     int sensorValue = capSensor.capacitiveSensor(30);
+
     Serial.print("Sensor value: ");
     Serial.println(sensorValue);
 
     // turn on the LED if the capacitance is over the threshold
     if (sensorValue > threshold) {
         digitalWrite(ledPin, HIGH);
-    }
-    else {
+    } else {
         digitalWrite(ledPin, LOW);
     }
 

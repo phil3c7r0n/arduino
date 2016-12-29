@@ -12,7 +12,7 @@
 // Phi Luu
 // Portland, Oregon, United States
 // Created August 26, 2016
-// Updated August 26, 2016
+// Updated December 28, 2016
 //
 //****************************************************************************
 
@@ -36,7 +36,7 @@ const byte LCDH = 2;
 
 byte switchVal = 0;
 byte prevSwitchVal = 0;
-byte reply = 0;             // available choices vary from 0 to 7
+byte reply = 0;     // available choices vary from 0 to 7
 
 //**********setup**********
 // Put setup code here, to run once
@@ -66,29 +66,29 @@ void loop() {
             lcd.print("The ball says...");
             delay(1000);
             lcd.setCursor(0, 1);
-            switch(reply) {
-                case 0:
+            switch (reply) {
+            case 0:
                 lcd.print("Absolutely");
                 break;
-                case 1:
+            case 1:
                 lcd.print("Probably");
                 break;
-                case 2:
+            case 2:
                 lcd.print("Maybe");
                 break;
-                case 3:
+            case 3:
                 lcd.print("Yep");
                 break;
-                case 4:
+            case 4:
                 lcd.print("Unsure");
                 break;
-                case 5:
+            case 5:
                 lcd.print("Foolish Question");
                 break;
-                case 6:
+            case 6:
                 lcd.print("Who knows");
                 break;
-                case 7:
+            case 7:
                 lcd.print("Impossible");
                 break;
             }

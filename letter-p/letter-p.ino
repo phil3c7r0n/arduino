@@ -11,7 +11,7 @@
 // Phi Luu
 // Portland, Oregon, United States
 // Created September 29, 2015
-// Updated August 13, 2016
+// Updated December 28, 2016
 //
 // ****************************************************************************
 
@@ -22,12 +22,12 @@
 // LED1
 
 //**********Required Hardware I/O Connections**********
-const byte LED1 = 2;     // connect LED 1 to 2
-const byte LED2 = 3;     // connect LED 2 to ~3
-const byte LED3 = 4;     // connect LED3 to 4
-const byte LED4 = 5;     // connect LED4 to ~5
-const byte LED5 = 6;     // connect LED5 to ~6
-const byte LED6 = 7;     // connect LED6 to 7
+const byte LED1 = 2;        // connect LED 1 to 2
+const byte LED2 = 3;        // connect LED 2 to ~3
+const byte LED3 = 4;        // connect LED3 to 4
+const byte LED4 = 5;        // connect LED4 to ~5
+const byte LED5 = 6;        // connect LED5 to ~6
+const byte LED6 = 7;        // connect LED6 to 7
 
 // set how long in milliseconds to flash one LED
 const unsigned int TIME = 100;
@@ -50,8 +50,8 @@ void loop() {
     for (byte pinNumber = LED1; pinNumber <= LED6; pinNumber++) {
         digitalWrite(pinNumber, LOW);   // turn off all LED
     }
-    digitalWrite(LED1, HIGH);  // start with LED 1
-    delay(TIME);               // flash this LED for TIME milliseconds
+    digitalWrite(LED1, HIGH);           // start with LED 1
+    delay(TIME);                        // flash this LED for TIME milliseconds
     // create a "running" effect on LEDs
     for (byte pinNumber = LED1; pinNumber <= LED5; pinNumber++) {
         digitalWrite(pinNumber, LOW);       // turn off this LED

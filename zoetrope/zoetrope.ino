@@ -12,7 +12,7 @@
 // Phi Luu
 // Portland, Oregon, United States
 // Created August 21, 2016
-// Updated August 21, 2016
+// Updated December 28, 2016
 //
 //****************************************************************************
 
@@ -54,7 +54,7 @@ void loop() {
     stateSwitchVal = digitalRead(stateSwitch);
     delay(1);       // delay helps the Arduino stable
     dirSwitchVal = digitalRead(dirSwitch);
-    motorSpeed = analogRead(potPin)/4;
+    motorSpeed = analogRead(potPin) / 4;
 
     // process the on/off state of the motor from the state switch
     if (stateSwitchVal != prevStateSwitchVal) {
@@ -74,8 +74,7 @@ void loop() {
     if (motorDirection) {
         digitalWrite(icInput1, LOW);
         digitalWrite(icInput2, HIGH);
-    }
-    else {
+    } else {
         digitalWrite(icInput1, HIGH);
         digitalWrite(icInput2, LOW);
     }
@@ -83,8 +82,7 @@ void loop() {
     // control the on/off state of the motor using PWM
     if (motorEnabled) {
         analogWrite(icEnable1, motorSpeed);
-    }
-    else {
+    } else {
         analogWrite(icEnable1, 0);
     }
 

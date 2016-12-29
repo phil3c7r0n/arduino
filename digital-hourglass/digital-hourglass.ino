@@ -12,26 +12,26 @@
 // Phi Luu
 // Portland, Oregon, United States
 // Created July 27, 2016
-// Updated August 13, 2016
+// Updated December 28, 2016
 //
 //****************************************************************************
 
 
 //**********Required Hardware I/O Connections**********
-const byte switchPin = 8;   // connect tilt switch to 8
-const byte led6Pin = 7;     // connect led6 to 7
-const byte led5Pin = 6;     // connect led5 to ~6
-const byte led4Pin = 5;     // connect led4 to ~5
-const byte led3Pin = 4;     // connect led3 to 4
-const byte led2Pin = 3;     // connect led2 to ~3
-const byte led1Pin = 2;     // connect led1 to 2
+const byte switchPin = 8;       // connect tilt switch to 8
+const byte led6Pin = 7;         // connect led6 to 7
+const byte led5Pin = 6;         // connect led5 to ~6
+const byte led4Pin = 5;         // connect led4 to ~5
+const byte led3Pin = 4;         // connect led3 to 4
+const byte led2Pin = 3;         // connect led2 to ~3
+const byte led1Pin = 2;         // connect led1 to 2
 
-unsigned long prevTime = 0; // hold the time
-byte currSwitchState = 0;   // hold the current switch state
-byte prevSwitchState = 0;   // hold the previous switch state
-byte currLed = led1Pin;     // init the current led to be led1
-unsigned long interval = 2000;      // 2 seconds = 2,000 milliseconds
-                                    // between each event
+unsigned long prevTime = 0;     // hold the time
+byte currSwitchState = 0;       // hold the current switch state
+byte prevSwitchState = 0;       // hold the previous switch state
+byte currLed = led1Pin;         // init the current led to be led1
+unsigned long interval = 2000;  // 2 seconds = 2,000 milliseconds
+                                // between each event
 
 //**********setup**********
 // Put setup code here, to run once
@@ -53,6 +53,7 @@ void setup() {
 void loop() {
     // start the timer and set the new current time
     unsigned long currTime = millis();
+
     // check the time
     if (currTime - prevTime > interval) {
         prevTime = currTime;            // store the current time
@@ -67,8 +68,7 @@ void loop() {
                 }
                 if (t < 3) {
                     delay(250);     // for 0.25 second
-                }
-                else {
+                } else {
                     delay(1000);    // the last flash takes 1 second
                 }
                 for (byte led = led1Pin; led <= led6Pin; led++) {
@@ -78,8 +78,7 @@ void loop() {
             }
             // restart the process
             currLed = led1Pin;
-        }
-        else {
+        } else {
             currLed++;  // next LED
         }
     }
