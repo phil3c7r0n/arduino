@@ -1,4 +1,4 @@
-// ****************************************************************************
+//***************************************************************************
 //
 // Project Name: DIY Arduino - Project 01: Letter P
 //
@@ -11,9 +11,9 @@
 // Phi Luu
 // Portland, Oregon, United States
 // Created September 29, 2015
-// Updated December 28, 2016
+// Updated December 29, 2016
 //
-// ****************************************************************************
+//****************************************************************************
 
 // LEDs arrangement
 // LED4 LED5
@@ -21,7 +21,7 @@
 // LED2
 // LED1
 
-//**********Required Hardware I/O Connections**********
+// required hardware I/O connections
 const byte LED1 = 2;        // connect LED 1 to 2
 const byte LED2 = 3;        // connect LED 2 to ~3
 const byte LED3 = 4;        // connect LED3 to 4
@@ -32,20 +32,20 @@ const byte LED6 = 7;        // connect LED6 to 7
 // set how long in milliseconds to flash one LED
 const unsigned int TIME = 100;
 
-//**********setup**********
-// Put setup code here, to run once
-// Inputs: None
-// Outputs: None
+/**
+ * put setup code here, to run once
+ * @method setup
+ */
 void setup() {
     for (byte pinNumber = LED1; pinNumber <= LED6; pinNumber++) {
         pinMode(pinNumber, OUTPUT);    // set pin 2 to pin 8 as OUTPUT
     }
 }
 
-//**********loop**********
-// Put main code here, to run repeatedly
-// Inputs: None
-// Outputs: None
+/**
+ * put main code here, to run repeatedly
+ * @method loop
+ */
 void loop() {
     for (byte pinNumber = LED1; pinNumber <= LED6; pinNumber++) {
         digitalWrite(pinNumber, LOW);   // turn off all LED

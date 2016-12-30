@@ -11,11 +11,11 @@
 // Phi Luu
 // Portland, Oregon, United States
 // Created January 10, 2016
-// Updated December 28, 2016
+// Updated December 29, 2016
 //
 //****************************************************************************
 
-//**********Required Hardware I/O Connections**********
+// required hardware I/O connections
 const byte sensorPin = A0;      // connect photocell to A0
 const byte ledPin = 4;          // connect LED to 4
 const byte piezoPin = 2;        // connect buzzer to 2
@@ -24,10 +24,10 @@ unsigned int sensorValue;       // declare sensorValue
 unsigned int sensorHigh = 0;    // 0 as the initial min of the photocell
 unsigned int sensorLow = 1023;  // 1023 as the initial max of the photocell
 
-//**********setup**********
-// Put setup code here, to run once
-// Inputs: None
-// Outputs: None
+/**
+ * put setup code here, to run once
+ * @method setup
+ */
 void setup() {
     pinMode(ledPin, OUTPUT);
     digitalWrite(ledPin, HIGH); // red light is turning on - calibrating...
@@ -45,10 +45,10 @@ void setup() {
     digitalWrite(ledPin, LOW);                  // red light turned off
 }
 
-//**********loop**********
-// Put main code here, to run repeatedly
-// Inputs: None
-// Outputs: None
+/**
+ * put main code here, to run repeatedly
+ * @method loop
+ */
 void loop() {
     sensorValue = analogRead(sensorPin);    // read sensorPin value again
     // determine the pitch of the piezo

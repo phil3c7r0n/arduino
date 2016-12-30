@@ -11,11 +11,11 @@
 // Phi Luu
 // Portland, Oregon, United States
 // Created September 30, 2015
-// Updated December 28, 2016
+// Updated December 29, 2016
 //
 //****************************************************************************
 
-//**********Required Hardware I/O Connections**********
+// required hardware I/O connections
 const byte LED1 = 2;                // connect LED 1 to 2
 const byte LED2 = 3;                // connect LED 2 to ~3
 const byte LED3 = 4;                // connect LED 3 to 4
@@ -24,10 +24,10 @@ const byte sensorPin = A0;          // connect TMP sensor to A0
 // set baseLineTemp = 20 degrees Celsius
 const float baseLineTemp = 20.0;
 
-//**********setup**********
-// Put setup code here, to run once
-// Inputs: None
-// Outputs: None
+/**
+ * put setup code here, to run once
+ * @method setup
+ */
 void setup() {
     Serial.begin(9600);                 // start Serial Monitor
     for (byte pinNumber = LED1; pinNumber <= LED3; pinNumber++) {
@@ -36,10 +36,10 @@ void setup() {
     }
 }
 
-//**********loop**********
-// Put main code here, to run repeatedly
-// Inputs: None
-// Outputs: None
+/**
+ * put main code here, to run repeatedly
+ * @method loop
+ */
 void loop() {
     // read value from sensorPin
     unsigned int sensorVal = analogRead(sensorPin);

@@ -12,26 +12,26 @@
 // Phi Luu
 // Portland, Oregon, United States
 // Created December 13, 2015
-// Updated December 28, 2016
+// Updated December 29, 2016
 //
 //****************************************************************************
 
-//**********Required Hardware I/O Connections**********
+// required hardware I/O connections
 const int led = 12;         // connect LED to 12
 const int photo = A0;       // connect photocell to A0
 
-//**********setup**********
-// Put setup code here, to run once
-// Inputs: None
-// Outputs: None
+/**
+ * put setup code here, to run once
+ * @method setup
+ */
 void setup() {
     pinMode(led, OUTPUT);   // set led as OUTPUT
 }
 
-//**********loop**********
-// Put main code here, to run repeatedly
-// Inputs: None
-// Outputs: None
+/**
+ * put main code here, to run repeatedly
+ * @method loop
+ */
 void loop() {
     int photoVal = analogRead(photo);   // read light amount from photocell
 

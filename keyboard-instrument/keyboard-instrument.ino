@@ -16,7 +16,7 @@
 //
 //****************************************************************************
 
-//**********Required Hardware I/O Connections**********
+// required hardware I/O connections
 const int piezo = 8;        // connect buzzer to 8
 const int keyboard = A0;    // connect keyboard to A0
 
@@ -26,19 +26,19 @@ const int notes[] = { 262, 294, 330, 349 };
 // baud rate for serial monitor
 const unsigned int BAUD_RATE = 9600;
 
-//**********setup**********
-// Put setup code here, to run once
-// Inputs: None
-// Outputs: None
+/**
+ * put setup code here, to run once
+ * @method setup
+ */
 void setup() {
     Serial.begin(BAUD_RATE);    // start the serial monitor
     pinMode(piezo, OUTPUT);     // set piezo as OUTPUT
 }
 
-//**********loop**********
-// Put main code here, to run repeatedly
-// Inputs: None
-// Outputs: None
+/**
+ * put main code here, to run repeatedly
+ * @method loop
+ */
 void loop() {
     // read input from the keyboard and set to keyVal
     unsigned int keyVal = analogRead(keyboard);

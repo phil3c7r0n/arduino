@@ -40,7 +40,10 @@ byte knockVal;
 boolean locked = false;
 byte numKnocks = 0;
 
-// put setup code here, to run once
+/**
+ * put setup code here, to run once
+ * @method setup
+ */
 void setup() {
     servoMotor.attach(servoPin);       // attach the servo to ~9
     pinMode(switchPin, INPUT);
@@ -54,7 +57,10 @@ void setup() {
     Serial.println("ACCESS GRANTED");
 }
 
-// put main code here, to run repeatedly
+/**
+ * put main code here, to run repeatedly
+ * @method loop
+ */
 void loop() {
     if (locked == false) {
         switchVal = digitalRead(switchPin);
@@ -80,6 +86,10 @@ void loop() {
     }
 }
 
+/**
+ * change the LEDs and turn the servo to unlock the box
+ * @method unlockTheBox
+ */
 void unlockTheBox(void) {
     // change the locked value
     locked = false;
@@ -94,6 +104,10 @@ void unlockTheBox(void) {
     delay(20);
 }
 
+/**
+ * change the LEDs and turn the servo to lock the box
+ * @method lockTheBox
+ */
 void lockTheBox(void) {
     // change locked value
     locked = true;
@@ -108,7 +122,13 @@ void lockTheBox(void) {
     delay(20);
 }
 
-// checks to see if a knock is valid or not
+/**
+ * check to see if a knock is valid or not
+ * @method checkForKnock
+ * @param  aKnockVal     the loudness of the knock
+ * @return true          valid
+ * @return false         invalid
+ */
 boolean checkForKnock(byte aKnockVal) {
     if (aKnockVal > quietKnockVal && aKnockVal < loudKnockVal) {
         digitalWrite(yellowLEDPin, HIGH);

@@ -12,13 +12,13 @@
 // Phi Luu
 // Portland, Oregon, United States
 // Created August 26, 2016
-// Updated December 28, 2016
+// Updated December 29, 2016
 //
 //****************************************************************************
 
 #include <LiquidCrystal.h>
 
-//**********Required Hardware I/O Connections**********
+// required hardware I/O connections
 const byte lcdD7 = 2;       // connect D7 of the LCD to 2
 const byte lcdD6 = 3;       // connect D6 of the LCD to ~3
 const byte lcdD5 = 4;       // connect D5 of the LCD to 4
@@ -38,10 +38,10 @@ byte switchVal = 0;
 byte prevSwitchVal = 0;
 byte reply = 0;     // available choices vary from 0 to 7
 
-//**********setup**********
-// Put setup code here, to run once
-// Inputs: None
-// Outputs: None
+/**
+ * put setup code here, to run once
+ * @method setup
+ */
 void setup() {
     lcd.begin(LCDW, LCDH);
     pinMode(switchPin, INPUT);
@@ -52,10 +52,10 @@ void setup() {
     lcd.print("Crystal Ball!");
 }
 
-//**********loop**********
-// Put main code here, to run repeatedly
-// Inputs: None
-// Outputs: None
+/**
+ * put main code here, to run repeatedly
+ * @method loop
+ */
 void loop() {
     switchVal = digitalRead(switchPin);
     if (switchVal != prevSwitchVal) {

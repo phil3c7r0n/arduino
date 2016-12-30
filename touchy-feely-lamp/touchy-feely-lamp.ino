@@ -12,11 +12,11 @@
 // Phi Luu
 // Portland, Oregon, United States
 // Created December 18, 2016
-// Updated December 28, 2016
+// Updated December 29, 2016
 //
 //****************************************************************************
 
-//**********Required Hardware Connections**********
+// required hardware I/O connections
 const byte sendingPin = 4;          // capacitance sending pin connected to 4
 const byte receivingPin = 2;        // capacitance receiving pin connected to 2
 const byte ledPin = 12;             // indicator LED pin connected to 12
@@ -28,13 +28,19 @@ CapacitiveSensor capSensor = CapacitiveSensor(sendingPin, receivingPin);
 const int threshold = 45;
 const unsigned short BAUD_RATE = 9600;
 
-// Put setup code here, to run once
+/**
+ * put setup code here, to run once
+ * @method setup
+ */
 void setup() {
     Serial.begin(BAUD_RATE);
     pinMode(ledPin, OUTPUT);
 }
 
-// Put main code here, to run repeatedly
+/**
+ * put main code here, to run repeatedly
+ * @method loop
+ */
 void loop() {
     // read 30 samples at a time
     int sensorValue = capSensor.capacitiveSensor(30);

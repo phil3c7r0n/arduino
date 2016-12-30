@@ -16,8 +16,7 @@
 //
 //****************************************************************************
 
-
-//**********Required Hardware I/O Connections**********
+// required hardware I/O connections
 const byte switchPin = 8;       // connect tilt switch to 8
 const byte led6Pin = 7;         // connect led6 to 7
 const byte led5Pin = 6;         // connect led5 to ~6
@@ -33,10 +32,10 @@ byte currLed = led1Pin;         // init the current led to be led1
 unsigned long interval = 2000;  // 2 seconds = 2,000 milliseconds
                                 // between each event
 
-//**********setup**********
-// Put setup code here, to run once
-// Inputs: None
-// Outputs: None
+/**
+ * put setup code here, to run once
+ * @method setup
+ */
 void setup() {
     // set all LED pins as OUTPUT
     for (byte led = led1Pin; led <= led6Pin; led++) {
@@ -46,10 +45,10 @@ void setup() {
     pinMode(switchPin, INPUT);
 }
 
-//**********loop**********
-// Put main code here, to run repeatedly
-// Inputs: None
-// Outputs: None
+/**
+ * put main code here, to run repeatedly
+ * @method loop
+ */
 void loop() {
     // start the timer and set the new current time
     unsigned long currTime = millis();

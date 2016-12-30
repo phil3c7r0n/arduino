@@ -12,11 +12,11 @@
 // Phi Luu
 // Portland, Oregon, United States
 // Created October 25, 2015
-// Updated December 28, 2016
+// Updated December 29, 2016
 //
 //****************************************************************************
 
-//**********Required Hardware I/O Connections**********
+// required hardware I/O connections
 const byte redLEDPin = 11;      // connect red pin of the RGB LED to ~11
 const byte blueLEDPin = 10;     // connect green pin of the RGB LED to ~10
 const byte greenLEDPin = 9;     // connect blue pin of the RGB LED to ~9
@@ -35,11 +35,10 @@ unsigned int redSensorValue = 0;    // init redSensorValue = 0
 unsigned int blueSensorValue = 0;   // init blueSensorValue = 0
 unsigned int greenSensorValue = 0;  // init greenSensorValue = 0
 
-
-//**********setup**********
-// Put setup code here, to run once
-// Inputs: None
-// Outputs: None
+/**
+ * put setup code here, to run once
+ * @method setup
+ */
 void setup() {
     Serial.begin(BAUD_RATE);        // start serial monitor
     pinMode(redLEDPin, OUTPUT);     // set redLEDPin as OUTPUT
@@ -47,10 +46,10 @@ void setup() {
     pinMode(greenLEDPin, OUTPUT);   // set greenLEDPin as OUTPUT
 }
 
-//**********loop**********
-// Put main code here, to run repeatedly
-// Inputs: None
-// Outputs: None
+/**
+ * put main code here, to run repeatedly
+ * @method loop
+ */
 void loop() {
     // read the values from the sensors
     // leave 5 miliseconds for Analog - Digital Conversion

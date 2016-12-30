@@ -12,11 +12,11 @@
 // Phi Luu
 // Portland, Oregon, United States
 // Created August 21, 2016
-// Updated December 28, 2016
+// Updated December 29, 2016
 //
 //****************************************************************************
 
-//**********Required Hardware I/O Connections**********
+// required hardware I/O connections
 const byte icInput1 = 3;        // connect IC Input1 to ~3
 const byte icInput2 = 2;        // connect IC Input2 to 2
 const byte icEnable1 = 9;       // connect IC Enable1 t ~9
@@ -34,10 +34,10 @@ byte motorDirection = 0;        // indicate the motor direction
 unsigned short motorSpeed = 0;  // control the motor speed
 
 
-//**********setup**********
-// Put setup code here, to run once
-// Inputs: None
-// Outputs: None
+/**
+ * put setup code here, to run once
+ * @method setup
+ */
 void setup() {
     pinMode(dirSwitch, INPUT);
     pinMode(stateSwitch, INPUT);
@@ -46,10 +46,10 @@ void setup() {
     pinMode(icEnable1, OUTPUT);
 }
 
-//**********loop**********
-// Put main code here, to run repeatedly
-// Inputs: None
-// Outputs: None
+/**
+ * put main code here, to run repeatedly
+ * @method loop
+ */
 void loop() {
     stateSwitchVal = digitalRead(stateSwitch);
     delay(1);       // delay helps the Arduino stable
