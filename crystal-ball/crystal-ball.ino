@@ -12,13 +12,13 @@
 // Phi Luu
 // Portland, Oregon, United States
 // Created August 26, 2016
-// Updated December 29, 2016
+// Updated December 30, 2016
 //
 //****************************************************************************
 
 #include <LiquidCrystal.h>
 
-// required hardware I/O connections
+//*** Required hardware I/O connections ***
 const byte lcdD7 = 2;       // connect D7 of the LCD to 2
 const byte lcdD6 = 3;       // connect D6 of the LCD to ~3
 const byte lcdD5 = 4;       // connect D5 of the LCD to 4
@@ -27,21 +27,19 @@ const byte lcdE = 11;       // connect E of the LCD to ~11
 const byte lcdRS = 12;      // connect RS of the LCD to 12
 const byte switchPin = 6;   // connect the tilt switch to ~6
 
-// constructor syntax
 // LiquidCrystal(rs, enable, d4, d5, d6, d7)
 LiquidCrystal lcd(lcdRS, lcdE, lcdD4, lcdD5, lcdD6, lcdD7);
-// set the number of columns (width) and rows (height) of the LCD
-const byte LCDW = 16;
-const byte LCDH = 2;
 
+//*** Global constants ***
+const byte LCDW = 16;       // LCD width
+const byte LCDH = 2;        // LCD height
+
+//*** Global variables ***
 byte switchVal = 0;
 byte prevSwitchVal = 0;
-byte reply = 0;     // available choices vary from 0 to 7
+byte reply = 0;             // varies from 0 to 7
 
-/**
- * put setup code here, to run once
- * @method setup
- */
+// Put setup code here, to run once
 void setup() {
     lcd.begin(LCDW, LCDH);
     pinMode(switchPin, INPUT);
@@ -52,15 +50,12 @@ void setup() {
     lcd.print("Crystal Ball!");
 }
 
-/**
- * put main code here, to run repeatedly
- * @method loop
- */
+// Put main code here, to run repeatedly
 void loop() {
     switchVal = digitalRead(switchPin);
     if (switchVal != prevSwitchVal) {
         if (switchVal == LOW) {
-            reply = random(8);      // choose 1 out of 8 anwers
+            reply = random(8);      // randomly choose 1 out of 8 anwers
             lcd.clear();
             lcd.setCursor(0, 0);
             lcd.print("The ball says...");

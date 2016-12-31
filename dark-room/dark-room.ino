@@ -12,37 +12,30 @@
 // Phi Luu
 // Portland, Oregon, United States
 // Created December 13, 2015
-// Updated December 29, 2016
+// Updated December 30, 2016
 //
 //****************************************************************************
 
-// required hardware I/O connections
-const int led = 12;         // connect LED to 12
-const int photo = A0;       // connect photocell to A0
+//*** Required hardware I/O connections ***
+const byte photoPin = A0;       // connect photocell to A0
+const byte ledPin = 12;         // connect LED to 12
 
-/**
- * put setup code here, to run once
- * @method setup
- */
+//*** Global constants ***
+const unsigned short photoThres = 100;
+
+// Put setup code here, to run once
 void setup() {
-    pinMode(led, OUTPUT);   // set led as OUTPUT
+    pinMode(ledPin, OUTPUT);
 }
 
-/**
- * put main code here, to run repeatedly
- * @method loop
- */
+// Put main code here, to run repeatedly
 void loop() {
-    int photoVal = analogRead(photo);   // read light amount from photocell
+    int photoVal = analogRead(photoPin);
 
-    // when you enter your room and it's too dark
-    if (photoVal < 100) {
-        // it will turn the light on for you
-        digitalWrite(led, HIGH);
-    }
-    // if it's bright enough
-    else {
-        // turn of the LED to save energy
-        digitalWrite(led, LOW);
+    // toggle the light based on the threshold of light
+    if (photoVal < photoThres) {
+        digitalWrite(ledPin, HIGH);
+    } else {
+        digitalWrite(ledPin, LOW);
     }
 }

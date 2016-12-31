@@ -11,44 +11,42 @@
 // Phi Luu
 // Portland, Oregon, United States
 // Created November 21, 2015
-// Updated December 29, 2016
+// Updated December 30, 2016
 //
 //****************************************************************************
 
 #include <Servo.h>          // include Servo library for servo motors
 Servo myServo;              // declare myServo
 
-// required hardware I/O connections
+//*** Required hardware I/O connections ***
 const byte potPin = A0;     // connect potentiometer to A0
 const byte servoPin = 3;    // connect servo motor to ~3
 
-// baud rate for serial monitor
-const unsigned int BAUD_RATE = 9600;
+//*** Global constants ***
+const unsigned int BAUD_RATE = 9600;    // serial monitor's baud rate
 
-unsigned int potVal;        // the value of potentiometer
-unsigned char angle;        // the angle of the servo motor
+//*** Global variables ***
+unsigned int potVal;                    // potentiometer
+unsigned char angle;                    // servo's angle
 
-/**
- * put setup code here, to run once
- * @method setup
- */
+// Put setup code here, to run once
 void setup() {
     myServo.attach(servoPin);   // attach myServo into servoPin
     Serial.begin(BAUD_RATE);    // start the Serial Monitor
 }
 
-/**
- * put main code here, to run repeatedly
- * @method loop
- */
+// Put main code here, to run repeatedly
 void loop() {
-    potVal = analogRead(potPin);            // read potVal from potPin
+    // read & print potentiometer value
+    potVal = analogRead(potPin);
     Serial.print("potVal: ");
-    Serial.print(potVal);                   // print potVal on the Serial Monitor
-    angle = map(potVal, 0, 1023, 0, 179);   // map potVal to angle
+    Serial.print(potVal);
+    // map & print from pot value to angle
+    angle = map(potVal, 0, 1023, 0, 179);
     Serial.print(", angle: ");
-    Serial.print(angle);                    // print angle on the Serial Monitor
-    myServo.write(angle);                   // run the servo motor with the angle above
-    Serial.println();
-    delay(15);                              // delay helps the servo stable
+    Serial.println(angle);
+    // run the servo by the angle
+    myServo.write(angle);
+    // delay to stabilize
+    delay(15);
 }

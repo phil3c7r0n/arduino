@@ -11,49 +11,46 @@
 // Phi Luu
 // Portland, Oregon, United States
 // Created January 10, 2016
-// Updated December 29, 2016
+// Updated December 30, 2016
 //
 //****************************************************************************
 
-// required hardware I/O connections
+//*** Required hardware I/O connections ***
 const byte sensorPin = A0;      // connect photocell to A0
-const byte ledPin = 4;          // connect LED to 4
 const byte piezoPin = 2;        // connect buzzer to 2
+const byte ledPin = 4;          // connect LED to 4
 
-unsigned int sensorValue;       // declare sensorValue
-unsigned int sensorHigh = 0;    // 0 as the initial min of the photocell
-unsigned int sensorLow = 1023;  // 1023 as the initial max of the photocell
+//*** Global variables ***
+unsigned int sensorValue;
+unsigned int sensorHigh = 0;    // initial min of the photocell
+unsigned int sensorLow = 1023;  // initial max of the photocell
 
-/**
- * put setup code here, to run once
- * @method setup
- */
+// Put setup code here, to run once
 void setup() {
+    pinMode(piezoPin, OUTPUT);
     pinMode(ledPin, OUTPUT);
-    digitalWrite(ledPin, HIGH); // red light is turning on - calibrating...
-    // calibrate the photocell for 5 seconds
+    // calibrate the photocell for 5 seconds - red light turned on
+    digitalWrite(ledPin, HIGH);
     while (millis() < 5000) {
-        sensorValue = analogRead(sensorPin);    // read sensorPin value
+        sensorValue = analogRead(sensorPin);
         if (sensorValue > sensorHigh) {
-            sensorHigh = sensorValue;           // set upper bound of the photocell
+            sensorHigh = sensorValue;      // set new max value
         }
         if (sensorValue < sensorLow) {
-            sensorLow = sensorValue;            // set lower bound of the photocell
+            sensorLow = sensorValue;       // set new min value
         }
     }
-    // calibration completed
-    digitalWrite(ledPin, LOW);                  // red light turned off
+    // calibration completed - red light turned off
+    digitalWrite(ledPin, LOW);
 }
 
-/**
- * put main code here, to run repeatedly
- * @method loop
- */
+// Put main code here, to run repeatedly
 void loop() {
-    sensorValue = analogRead(sensorPin);    // read sensorPin value again
+    sensorValue = analogRead(sensorPin);
     // determine the pitch of the piezo
     unsigned int pitch = map(sensorValue, sensorLow, sensorHigh, 50, 4000);
-    // play the piezo with the pitch above and play for 20 milliseconds
+    // play the piezo with the pitch for 20 milliseconds
     tone(piezoPin, pitch, 20);
-    delay(10);                              // wait 10 milliseconds
+    // wait 10ms for the sensor to stabilize
+    delay(10);
 }

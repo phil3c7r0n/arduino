@@ -12,43 +12,35 @@
 // Phi Luu
 // Portland, Oregon, United States
 // Created July 27, 2016
-// Updated December 28, 2016
+// Updated December 30, 2016
 //
 //****************************************************************************
 
-// required hardware I/O connections
-const byte switchPin = 8;       // connect tilt switch to 8
-const byte led6Pin = 7;         // connect led6 to 7
-const byte led5Pin = 6;         // connect led5 to ~6
-const byte led4Pin = 5;         // connect led4 to ~5
-const byte led3Pin = 4;         // connect led3 to 4
-const byte led2Pin = 3;         // connect led2 to ~3
+//*** Required hardware I/O connections ***
 const byte led1Pin = 2;         // connect led1 to 2
+const byte led2Pin = 3;         // connect led2 to ~3
+const byte led3Pin = 4;         // connect led3 to 4
+const byte led4Pin = 5;         // connect led4 to ~5
+const byte led5Pin = 6;         // connect led5 to ~6
+const byte led6Pin = 7;         // connect led6 to 7
+const byte switchPin = 8;       // connect tilt switch to 8
 
-unsigned long prevTime = 0;     // hold the time
-byte currSwitchState = 0;       // hold the current switch state
-byte prevSwitchState = 0;       // hold the previous switch state
-byte currLed = led1Pin;         // init the current led to be led1
-unsigned long interval = 2000;  // 2 seconds = 2,000 milliseconds
-                                // between each event
+//*** Global variables ***
+unsigned long prevTime = 0;
+byte currSwitchState = 0;
+byte prevSwitchState = 0;
+byte currLed = led1Pin;
+unsigned long interval = 2000;  // time delay between each event
 
-/**
- * put setup code here, to run once
- * @method setup
- */
+// Put setup code here, to run once
 void setup() {
-    // set all LED pins as OUTPUT
     for (byte led = led1Pin; led <= led6Pin; led++) {
         pinMode(led, OUTPUT);
     }
-    // set switch pin as INPUT
     pinMode(switchPin, INPUT);
 }
 
-/**
- * put main code here, to run repeatedly
- * @method loop
- */
+// Put main code here, to run repeatedly
 void loop() {
     // start the timer and set the new current time
     unsigned long currTime = millis();
@@ -59,8 +51,7 @@ void loop() {
         digitalWrite(currLed, HIGH);    // turn on the current LED
         // once the time is up (all LEDs are turned on)
         if (currLed == led6Pin) {
-            // make a flashing effect
-            // indicating that time is up
+            // make blink effect
             for (byte t = 0; t < 4; t++) {
                 for (byte led = led1Pin; led <= led6Pin; led++) {
                     digitalWrite(led, HIGH);    // flashing on
@@ -75,20 +66,18 @@ void loop() {
                 }
                 delay(250);                     // for 0.25 second
             }
-            // restart the process
+            // restart the LED pin
             currLed = led1Pin;
         } else {
-            currLed++;  // next LED
+            currLed++;  // go to next LED pin
         }
     }
 
-    // read the current switch state from the tilt switch
+    // check the tilt switch
     currSwitchState = digitalRead(switchPin);
-    // check difference in the switch states
-    // simulate the flip of the hourglass. If the hourglass is flipped
+    // flip the light if the tilt switch is flipped
     if (currSwitchState != prevSwitchState) {
-        // restart the process
-        // turn off all LEDs
+        // restart the process - turn off all LEDs
         for (byte led = led1Pin; led <= led6Pin; led++) {
             digitalWrite(led, LOW);
         }

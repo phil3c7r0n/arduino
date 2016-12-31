@@ -11,36 +11,28 @@
 // Phi Luu
 // Portland, Oregon, United States
 // Created August 13, 2016
-// Updated December 29, 2016
+// Updated December 30, 2016
 //
 //****************************************************************************
 
-// required hardware I/O connections
+//*** Required hardware I/O connections ***
 const byte switchPin = 2;       // connect switch to 2
 const byte motorPin = 9;        // connect dc motor to ~9
 
-/**
- * put setup code here, to run once
- * @method setup
- */
+// Put setup code here, to run once
 void setup() {
     pinMode(switchPin, INPUT);
     pinMode(motorPin, OUTPUT);
 }
 
-/**
- * put main code here, to run repeatedly
- * @method loop
- */
+// Put main code here, to run repeatedly
 void loop() {
-    byte switchState = digitalRead(switchPin);   // read input from the switch
+    byte switchState = digitalRead(switchPin);
 
-    // if the switch is pressed
+    // toggle the switch to toggle the motor
     if (switchState) {
-        digitalWrite(motorPin, HIGH);           // spin the motor
-    }
-    // otherwise
-    else {
-        digitalWrite(motorPin, LOW);        // cut the power from the motor
+        digitalWrite(motorPin, HIGH);
+    } else {
+        digitalWrite(motorPin, LOW);
     }
 }

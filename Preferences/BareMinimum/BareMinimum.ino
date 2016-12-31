@@ -15,18 +15,21 @@
 //
 //****************************************************************************
 
-/**
- * put setup code here, to run once
- * @method setup
- */
-void setup() {
+//*** Required hardware I/O connections ***
 
+
+//*** Global constants ***
+
+
+//*** Global variables ***
+
+
+// Put setup code here, to run once
+void setup() {
+    
 }
 
-/**
- * put main code here, to run repeatedly
- * @method loop
- */
+// Put main code here, to run repeatedly
 void loop() {
-
+    
 }

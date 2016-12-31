@@ -12,40 +12,36 @@
 // Phi Luu
 // Portland, Oregon, United States
 // Created September 06, 2016
-// Updated December 28, 2016
+// Updated December 30, 2016
 //
 //****************************************************************************
 
 #include <Servo.h>
 Servo servoMotor;
 
-// required hardware I/O connections
+//*** Required hardware I/O connections ***
+const byte piezoPin = A0;       // the pin piezo buzzer connected to
 const byte switchPin = 2;       // the pin switch connected to
 const byte yellowLEDPin = 3;    // the pin yellow LED connected to
 const byte greenLEDPin = 4;     // the pin green LED connnected to
 const byte redLEDPin = 5;       // the pin red LED connected to
 const byte servoPin = 9;        // the pin servo motor connected to
-const byte piezoPin = A0;       // the pin piezo buzzer connected to
 
-// default baud rate
+//*** Global constants ***
 const unsigned short baudRate = 9600;
-
-// default knock meter
 const byte quietKnockVal = 30;
 const byte loudKnockVal = 50;
 const byte maxNumKnock = 5;
 
+//*** Global variables
 byte switchVal;
 byte knockVal;
 boolean locked = false;
 byte numKnocks = 0;
 
-/**
- * put setup code here, to run once
- * @method setup
- */
+// Put setup code here, to run once
 void setup() {
-    servoMotor.attach(servoPin);       // attach the servo to ~9
+    servoMotor.attach(servoPin);     // attach the servo to ~9
     pinMode(switchPin, INPUT);
     pinMode(yellowLEDPin, OUTPUT);
     pinMode(greenLEDPin, OUTPUT);
@@ -57,10 +53,7 @@ void setup() {
     Serial.println("ACCESS GRANTED");
 }
 
-/**
- * put main code here, to run repeatedly
- * @method loop
- */
+// Put main code here, to run repeatedly
 void loop() {
     if (locked == false) {
         switchVal = digitalRead(switchPin);
@@ -86,10 +79,7 @@ void loop() {
     }
 }
 
-/**
- * change the LEDs and turn the servo to unlock the box
- * @method unlockTheBox
- */
+// Change the LEDs and turn the servo to unlock the box
 void unlockTheBox(void) {
     // change the locked value
     locked = false;
@@ -104,10 +94,7 @@ void unlockTheBox(void) {
     delay(20);
 }
 
-/**
- * change the LEDs and turn the servo to lock the box
- * @method lockTheBox
- */
+// Change the LEDs and turn the servo to lock the box
 void lockTheBox(void) {
     // change locked value
     locked = true;
@@ -122,13 +109,12 @@ void lockTheBox(void) {
     delay(20);
 }
 
-/**
- * check to see if a knock is valid or not
- * @method checkForKnock
- * @param  aKnockVal     the loudness of the knock
- * @return true          valid
- * @return false         invalid
- */
+// Check to see if a knock is valid or not
+//
+// @param   aKnockVal   the loudness of the knock
+//
+// @return  true        a valid knock
+// @return  false       an invalid knock
 boolean checkForKnock(byte aKnockVal) {
     if (aKnockVal > quietKnockVal && aKnockVal < loudKnockVal) {
         digitalWrite(yellowLEDPin, HIGH);
