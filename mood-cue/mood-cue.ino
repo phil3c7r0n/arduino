@@ -11,31 +11,40 @@
 // Phi Luu
 // Portland, Oregon, United States
 // Created November 21, 2015
-// Updated December 30, 2016
+// Updated December 31, 2016
 //
 //****************************************************************************
 
 #include <Servo.h>          // include Servo library for servo motors
 Servo myServo;              // declare myServo
 
-//*** Required hardware I/O connections ***
+//***
+// Required hardware I/O connections
+//***
 const byte potPin = A0;     // connect potentiometer to A0
 const byte servoPin = 3;    // connect servo motor to ~3
 
-//*** Global constants ***
+//***
+// Global declaration
+//***
+// Global constants
 const unsigned int BAUD_RATE = 9600;    // serial monitor's baud rate
 
-//*** Global variables ***
+// Global variables
 unsigned int potVal;                    // potentiometer
 unsigned char angle;                    // servo's angle
 
+//***
 // Put setup code here, to run once
+//***
 void setup() {
     myServo.attach(servoPin);   // attach myServo into servoPin
     Serial.begin(BAUD_RATE);    // start the Serial Monitor
 }
 
+//***
 // Put main code here, to run repeatedly
+//***
 void loop() {
     // read & print potentiometer value
     potVal = analogRead(potPin);

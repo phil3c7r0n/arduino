@@ -11,21 +11,28 @@
 // Phi Luu
 // Portland, Oregon, United States
 // Created January 10, 2016
-// Updated December 30, 2016
+// Updated December 31, 2016
 //
 //****************************************************************************
 
-//*** Required hardware I/O connections ***
+//***
+// Required hardware I/O connections
+//***
 const byte sensorPin = A0;      // connect photocell to A0
 const byte piezoPin = 2;        // connect buzzer to 2
 const byte ledPin = 4;          // connect LED to 4
 
-//*** Global variables ***
+//***
+// Global declaration
+//***
+// Global variables
 unsigned int sensorValue;
 unsigned int sensorHigh = 0;    // initial min of the photocell
 unsigned int sensorLow = 1023;  // initial max of the photocell
 
+//***
 // Put setup code here, to run once
+//***
 void setup() {
     pinMode(piezoPin, OUTPUT);
     pinMode(ledPin, OUTPUT);
@@ -44,7 +51,9 @@ void setup() {
     digitalWrite(ledPin, LOW);
 }
 
+//***
 // Put main code here, to run repeatedly
+//***
 void loop() {
     sensorValue = analogRead(sensorPin);
     // determine the pitch of the piezo

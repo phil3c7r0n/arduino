@@ -15,21 +15,30 @@
 //
 //****************************************************************************
 
-//*** Required hardware I/O connections ***
+//***
+// Required hardware I/O connections
+//***
 
 
-//*** Global constants ***
+//***
+// Global declaration
+//***
+// Global constants
 
 
-//*** Global variables ***
+// Global variables
 
 
+//***
 // Put setup code here, to run once
+//***
 void setup() {
     
 }
 
+//***
 // Put main code here, to run repeatedly
+//***
 void loop() {
     
 }

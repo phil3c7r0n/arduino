@@ -12,13 +12,15 @@
 // Phi Luu
 // Portland, Oregon, United States
 // Created August 26, 2016
-// Updated December 30, 2016
+// Updated December 31, 2016
 //
 //****************************************************************************
 
 #include <LiquidCrystal.h>
 
-//*** Required hardware I/O connections ***
+//***
+// Required hardware I/O connections
+//***
 const byte lcdD7 = 2;       // connect D7 of the LCD to 2
 const byte lcdD6 = 3;       // connect D6 of the LCD to ~3
 const byte lcdD5 = 4;       // connect D5 of the LCD to 4
@@ -30,16 +32,21 @@ const byte switchPin = 6;   // connect the tilt switch to ~6
 // LiquidCrystal(rs, enable, d4, d5, d6, d7)
 LiquidCrystal lcd(lcdRS, lcdE, lcdD4, lcdD5, lcdD6, lcdD7);
 
-//*** Global constants ***
+//***
+// Global declaration
+//***
+// Global constants
 const byte LCDW = 16;       // LCD width
 const byte LCDH = 2;        // LCD height
 
-//*** Global variables ***
+// Global variables
 byte switchVal = 0;
 byte prevSwitchVal = 0;
 byte reply = 0;             // varies from 0 to 7
 
+//***
 // Put setup code here, to run once
+//***
 void setup() {
     lcd.begin(LCDW, LCDH);
     pinMode(switchPin, INPUT);
@@ -50,43 +57,43 @@ void setup() {
     lcd.print("Crystal Ball!");
 }
 
+//***
 // Put main code here, to run repeatedly
+//***
 void loop() {
     switchVal = digitalRead(switchPin);
-    if (switchVal != prevSwitchVal) {
-        if (switchVal == LOW) {
-            reply = random(8);      // randomly choose 1 out of 8 anwers
-            lcd.clear();
-            lcd.setCursor(0, 0);
-            lcd.print("The ball says...");
-            delay(1000);
-            lcd.setCursor(0, 1);
-            switch (reply) {
-            case 0:
-                lcd.print("Absolutely");
-                break;
-            case 1:
-                lcd.print("Probably");
-                break;
-            case 2:
-                lcd.print("Maybe");
-                break;
-            case 3:
-                lcd.print("Yep");
-                break;
-            case 4:
-                lcd.print("Unsure");
-                break;
-            case 5:
-                lcd.print("Foolish Question");
-                break;
-            case 6:
-                lcd.print("Who knows");
-                break;
-            case 7:
-                lcd.print("Impossible");
-                break;
-            }
+    if (switchVal != prevSwitchVal && switchVal == LOW) {
+        reply = random(8);          // randomly choose 1 out of 8 anwers
+        lcd.clear();
+        lcd.setCursor(0, 0);
+        lcd.print("The ball says...");
+        delay(1000);
+        lcd.setCursor(0, 1);
+        switch (reply) {
+        case 0:
+            lcd.print("Absolutely");
+            break;
+        case 1:
+            lcd.print("Probably");
+            break;
+        case 2:
+            lcd.print("Maybe");
+            break;
+        case 3:
+            lcd.print("Yep");
+            break;
+        case 4:
+            lcd.print("Unsure");
+            break;
+        case 5:
+            lcd.print("Foolish Question");
+            break;
+        case 6:
+            lcd.print("Who knows");
+            break;
+        case 7:
+            lcd.print("Impossible");
+            break;
         }
     }
     prevSwitchVal = switchVal;

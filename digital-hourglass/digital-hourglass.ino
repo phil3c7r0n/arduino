@@ -12,11 +12,13 @@
 // Phi Luu
 // Portland, Oregon, United States
 // Created July 27, 2016
-// Updated December 30, 2016
+// Updated December 31, 2016
 //
 //****************************************************************************
 
-//*** Required hardware I/O connections ***
+//***
+// Required hardware I/O connections
+//***
 const byte led1Pin = 2;         // connect led1 to 2
 const byte led2Pin = 3;         // connect led2 to ~3
 const byte led3Pin = 4;         // connect led3 to 4
@@ -25,14 +27,19 @@ const byte led5Pin = 6;         // connect led5 to ~6
 const byte led6Pin = 7;         // connect led6 to 7
 const byte switchPin = 8;       // connect tilt switch to 8
 
-//*** Global variables ***
+//***
+// Global declaration
+//***
+// Global variables
 unsigned long prevTime = 0;
 byte currSwitchState = 0;
 byte prevSwitchState = 0;
 byte currLed = led1Pin;
 unsigned long interval = 2000;  // time delay between each event
 
+//***
 // Put setup code here, to run once
+//***
 void setup() {
     for (byte led = led1Pin; led <= led6Pin; led++) {
         pinMode(led, OUTPUT);
@@ -40,7 +47,9 @@ void setup() {
     pinMode(switchPin, INPUT);
 }
 
+//***
 // Put main code here, to run repeatedly
+//***
 void loop() {
     // start the timer and set the new current time
     unsigned long currTime = millis();

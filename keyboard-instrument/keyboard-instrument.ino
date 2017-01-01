@@ -12,28 +12,37 @@
 // Phi Luu
 // Portland, Oregon, United States
 // Created March 05, 2016
-// Updated December 30, 2016
+// Updated December 31, 2016
 //
 //****************************************************************************
 
-//*** Required hardware I/O connections ***
+//***
+// Required hardware I/O connections
+//***
 const byte keyboard = A0;       // connect keyboard to A0
 const byte piezoPin = 8;        // connect buzzer to 8
 
-//*** Global constants ***
+//***
+// Global declaration
+//***
+// Global constants
 const int notes[] = { 262, 294, 330, 349 };     // C, D, E, F frequencies
 const unsigned int BAUD_RATE = 9600;            // serial monitor's baud rate
 
-//*** Global variables ***
+// Global variables
 unsigned int keyVal;
 
+//***
 // Put setup code here, to run once
+//***
 void setup() {
     Serial.begin(BAUD_RATE);    // start the serial monitor
     pinMode(piezoPin, OUTPUT);  // set piezoPin as OUTPUT
 }
 
+//***
 // Put main code here, to run repeatedly
+//***
 void loop() {
     // read and print keyboard value
     keyVal = analogRead(keyboard);

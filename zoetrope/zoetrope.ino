@@ -12,11 +12,13 @@
 // Phi Luu
 // Portland, Oregon, United States
 // Created August 21, 2016
-// Updated December 30, 2016
+// Updated December 31, 2016
 //
 //****************************************************************************
 
-//*** Required hardware I/O connections ***
+//***
+// Required hardware I/O connections
+//***
 const byte potPin = A0;         // connect potentiometer to A0
 const byte icInput1 = 3;        // connect IC Input1 to ~3
 const byte icInput2 = 2;        // connect IC Input2 to 2
@@ -24,7 +26,10 @@ const byte icEnable1 = 9;       // connect IC Enable1 t ~9
 const byte dirSwitch = 4;       // connect direction switch to 4
 const byte stateSwitch = 5;     // connect state switch to ~5
 
-//*** Global variables ***
+//***
+// Global declaration
+//***
+// Global variables
 byte stateSwitchVal = 0;        // state switch
 byte dirSwitchVal = 0;          // direction switch
 byte prevStateSwitchVal = 0;    // previous state switch
@@ -33,7 +38,9 @@ byte motorEnabled = 0;          // whether the motor is on/off
 byte motorDirection = 0;        // motor direction
 unsigned short motorSpeed = 0;
 
+//***
 // Put setup code here, to run once
+//***
 void setup() {
     pinMode(dirSwitch, INPUT);
     pinMode(stateSwitch, INPUT);
@@ -42,7 +49,9 @@ void setup() {
     pinMode(icEnable1, OUTPUT);
 }
 
+//***
 // Put main code here, to run repeatedly
+//***
 void loop() {
     stateSwitchVal = digitalRead(stateSwitch);
     delay(1);

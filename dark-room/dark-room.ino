@@ -12,23 +12,32 @@
 // Phi Luu
 // Portland, Oregon, United States
 // Created December 13, 2015
-// Updated December 30, 2016
+// Updated December 31, 2016
 //
 //****************************************************************************
 
-//*** Required hardware I/O connections ***
+//***
+// Required hardware I/O connections
+//***
 const byte photoPin = A0;       // connect photocell to A0
 const byte ledPin = 12;         // connect LED to 12
 
-//*** Global constants ***
+//***
+// Global declaration
+//***
+// Global constants
 const unsigned short photoThres = 100;
 
+//***
 // Put setup code here, to run once
+//***
 void setup() {
     pinMode(ledPin, OUTPUT);
 }
 
+//***
 // Put main code here, to run repeatedly
+//***
 void loop() {
     int photoVal = analogRead(photoPin);
 
