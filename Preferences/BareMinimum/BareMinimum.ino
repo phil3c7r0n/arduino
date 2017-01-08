@@ -16,13 +16,18 @@
 //****************************************************************************
 
 //***
-// Required hardware I/O connections
+// Preprocessor Directives
 //***
+
 
 
 //***
 // Global declaration
 //***
+
+// Required hardware I/O connections
+
+
 // Global constants
 
 
@@ -30,15 +35,19 @@
 
 
 //***
-// Put setup code here, to run once
+// Subroutines
 //***
+
+
+
+//***
+// Mandatory Routines
+//***
+
 void setup() {
     
 }
 
-//***
-// Put main code here, to run repeatedly
-//***
-void loop() {
+void loop()  {
     
 }

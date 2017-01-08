@@ -11,49 +11,49 @@
 // Phi Luu
 // Portland, Oregon, United States
 // Created January 10, 2016
-// Updated December 31, 2016
+// Updated January 07, 2017
 //
 //****************************************************************************
 
 //***
-// Required hardware I/O connections
+// Global Declaration
 //***
-const byte sensorPin = A0;      // connect photocell to A0
-const byte piezoPin = 2;        // connect buzzer to 2
-const byte ledPin = 4;          // connect LED to 4
 
-//***
-// Global declaration
-//***
+// Required hardware I/O connections
+const byte sensorPin = A0; // connect photocell to A0
+const byte piezoPin  = 2;  // connect buzzer to 2
+const byte ledPin    = 4;  // connect LED to 4
+
 // Global variables
 unsigned int sensorValue;
 unsigned int sensorHigh = 0;    // initial min of the photocell
-unsigned int sensorLow = 1023;  // initial max of the photocell
+unsigned int sensorLow  = 1023; // initial max of the photocell
 
 //***
-// Put setup code here, to run once
+// Mandatory Routines
 //***
+
 void setup() {
     pinMode(piezoPin, OUTPUT);
-    pinMode(ledPin, OUTPUT);
+    pinMode(ledPin,   OUTPUT);
     // calibrate the photocell for 5 seconds - red light turned on
     digitalWrite(ledPin, HIGH);
+
     while (millis() < 5000) {
         sensorValue = analogRead(sensorPin);
+
         if (sensorValue > sensorHigh) {
-            sensorHigh = sensorValue;      // set new max value
+            sensorHigh = sensorValue; // set new max value
         }
+
         if (sensorValue < sensorLow) {
-            sensorLow = sensorValue;       // set new min value
+            sensorLow = sensorValue; // set new min value
         }
     }
     // calibration completed - red light turned off
     digitalWrite(ledPin, LOW);
 }
 
-//***
-// Put main code here, to run repeatedly
-//***
 void loop() {
     sensorValue = analogRead(sensorPin);
     // determine the pitch of the piezo

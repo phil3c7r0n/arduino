@@ -12,90 +12,51 @@
 // Phi Luu
 // Portland, Oregon, United States
 // Created September 06, 2016
-// Updated December 31, 2016
+// Updated January 07, 2017
 //
 //****************************************************************************
+
+//***
+// Preprocessor Directives
+//***
 
 #include <Servo.h>
 Servo servoMotor;
 
 //***
-// Required hardware I/O connections
+// Global Declaration
 //***
-const byte piezoPin = A0;       // the pin piezo buzzer connected to
-const byte switchPin = 2;       // the pin switch connected to
-const byte yellowLEDPin = 3;    // the pin yellow LED connected to
-const byte greenLEDPin = 4;     // the pin green LED connnected to
-const byte redLEDPin = 5;       // the pin red LED connected to
-const byte servoPin = 9;        // the pin servo motor connected to
 
-//***
-// Global declaration
-//***
+// Required hardware I/O connections
+const byte piezoPin     = A0; // the pin piezo buzzer connected to
+const byte switchPin    = 2;  // the pin switch connected to
+const byte yellowLEDPin = 3;  // the pin yellow LED connected to
+const byte greenLEDPin  = 4;  // the pin green LED connnected to
+const byte redLEDPin    = 5;  // the pin red LED connected to
+const byte servoPin     = 9;  // the pin servo motor connected to
+
 // Global constants
 const unsigned short baudRate = 9600;
-const byte quietKnockVal = 30;
-const byte loudKnockVal = 50;
-const byte maxNumKnock = 5;
+const byte quietKnockVal      = 30;
+const byte loudKnockVal       = 50;
+const byte maxNumKnock        = 5;
 
 // Global variables
 byte switchVal;
 byte knockVal;
-boolean locked = false;
-byte numKnocks = 0;
+boolean locked    = false;
+byte    numKnocks = 0;
 
 //***
-// Put setup code here, to run once
+// Subroutines
 //***
-void setup() {
-    servoMotor.attach(servoPin);     // attach the servo to ~9
-    pinMode(switchPin, INPUT);
-    pinMode(yellowLEDPin, OUTPUT);
-    pinMode(greenLEDPin, OUTPUT);
-    pinMode(redLEDPin, OUTPUT);
-    Serial.begin(baudRate);
-    // unlock the box first
-    digitalWrite(greenLEDPin, HIGH);
-    servoMotor.write(0);
-    Serial.println("ACCESS GRANTED");
-}
 
-//***
-// Put main code here, to run repeatedly
-//***
-void loop() {
-    if (locked == false) {
-        switchVal = digitalRead(switchPin);
-        if (switchVal == HIGH) {
-            lockTheBox();
-        }
-    } else {
-        knockVal = analogRead(piezoPin);
-        // require maxNumKnock valid knocks
-        if (numKnocks < maxNumKnock && knockVal > 0) {
-            if (checkForKnock(knockVal) == true) {
-                numKnocks++;
-            }
-            Serial.print("Need ");
-            Serial.print(maxNumKnock - numKnocks);
-            Serial.println(" more knock(s)");
-        }
-        if (numKnocks >= maxNumKnock) {
-            unlockTheBox();
-            // reset numKnocks
-            numKnocks = 0;
-        }
-    }
-}
-
-//***
-// Change the LEDs and turn the servo to unlock the box
-//***
+// Changes the LEDs and turn the servo to unlock the box
 void unlockTheBox(void) {
     // change the locked value
     locked = false;
     // indicate on LEDs
-    digitalWrite(redLEDPin, LOW);
+    digitalWrite(redLEDPin,   LOW);
     digitalWrite(greenLEDPin, HIGH);
     // rotate the servo to 0 degree
     servoMotor.write(0);
@@ -105,33 +66,29 @@ void unlockTheBox(void) {
     delay(20);
 }
 
-//***
-// Change the LEDs and turn the servo to lock the box
-//***
+// Changes the LEDs and turn the servo to lock the box
 void lockTheBox(void) {
     // change locked value
     locked = true;
     // indicate on LEDs
     digitalWrite(greenLEDPin, LOW);
-    digitalWrite(redLEDPin, HIGH);
+    digitalWrite(redLEDPin,   HIGH);
     // rotate the servo to 90 degrees
-    servoMotor.write(90);       // rotate the servo 90 degrees to lock
+    servoMotor.write(90); // rotate the servo 90 degrees to lock
     // print a message on the Serial Monitor
     Serial.println("ACCESS DENIED");
     // allow time for the servo to completely move
     delay(20);
 }
 
-//***
-// Check to see if a knock is valid or not
+// Checks to see if a knock is valid or not
 //
 // @param   aKnockVal   the loudness of the knock
 //
 // @return  true        a valid knock
 // @return  false       an invalid knock
-//***
 boolean checkForKnock(byte aKnockVal) {
-    if (aKnockVal > quietKnockVal && aKnockVal < loudKnockVal) {
+    if ((aKnockVal > quietKnockVal) && (aKnockVal < loudKnockVal)) {
         digitalWrite(yellowLEDPin, HIGH);
         delay(50);
         digitalWrite(yellowLEDPin, LOW);
@@ -142,5 +99,50 @@ boolean checkForKnock(byte aKnockVal) {
         Serial.print("Invalid knock value: ");
         Serial.println(aKnockVal);
         return false;
+    }
+}
+
+//***
+// Mandatory Routines
+//***
+
+void setup() {
+    servoMotor.attach(servoPin); // attach the servo to ~9
+    pinMode(switchPin,    INPUT);
+    pinMode(yellowLEDPin, OUTPUT);
+    pinMode(greenLEDPin,  OUTPUT);
+    pinMode(redLEDPin,    OUTPUT);
+    Serial.begin(baudRate);
+    // unlock the box first
+    digitalWrite(greenLEDPin, HIGH);
+    servoMotor.write(0);
+    Serial.println("ACCESS GRANTED");
+}
+
+void loop() {
+    if (locked == false) {
+        switchVal = digitalRead(switchPin);
+
+        if (switchVal == HIGH) {
+            lockTheBox();
+        }
+    } else {
+        knockVal = analogRead(piezoPin);
+
+        // require maxNumKnock valid knocks
+        if ((numKnocks < maxNumKnock) && (knockVal > 0)) {
+            if (checkForKnock(knockVal) == true) {
+                numKnocks++;
+            }
+            Serial.print("Need ");
+            Serial.print(maxNumKnock - numKnocks);
+            Serial.println(" more knock(s)");
+        }
+
+        if (numKnocks >= maxNumKnock) {
+            unlockTheBox();
+            // reset numKnocks
+            numKnocks = 0;
+        }
     }
 }
