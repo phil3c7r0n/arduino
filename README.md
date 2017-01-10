@@ -6,9 +6,9 @@ See more on my blog about these projects at [Notes of PhiL](https://philectron.g
 
 ## Preferences
 
-To customize the default sketchbook, edit [BareMinimum.ino](/Preferences/BareMinimum.ino). Next, copy to `%programfiles(x86)%\Arduino\examples\01.Basics\BareMinimum`, then replace the old file and mark the file as **Read-Only**.
+To customize the default sketchbook, edit [BareMinimum.ino](/preferences/BareMinimum/BareMinimum.ino). Next, copy to `%programfiles(x86)%\Arduino\examples\01.Basics\BareMinimum`, then replace the old file and mark the file as **Read-Only**.
 
-To customize preferences for Arduino IDE, edit [preferences.txt](/Preferences/preferences.txt). Next, copy the file to `%localappdata%\Arduino15` and replace the old one.
+To customize preferences for Arduino IDE, edit [preferences.txt](/preferences/preferences.txt). Next, copy the file to `%localappdata%\Arduino15` and replace the old one.
 
 ## Issues
 
