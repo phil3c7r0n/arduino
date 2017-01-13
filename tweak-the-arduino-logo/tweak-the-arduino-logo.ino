@@ -25,7 +25,7 @@
 const byte potPin = A0;     // potentiometer connected to A0
 
 // Global constants
-const int BAUD_RATE = 9600; // for serial monitor
+const int BAUD_RATE = 19200; // for serial monitor
 
 //***
 // Mandatory Routines
