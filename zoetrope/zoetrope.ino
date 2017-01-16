@@ -1,24 +1,18 @@
-//****************************************************************************
-//
-// Project Name: Arduino Projects Book - Project 10: Zoetrope
-//
-// File Name: zoetrope.ino
-//
-// Description: Control the speed and the direction of the DC motor using
-// two switches and a potentiometer
-//
-// Compatibility: Arduino UNO
-//
-// Phi Luu
-// Portland, Oregon, United States
-// Created August 21, 2016
-// Updated January 07, 2017
-//
-//****************************************************************************
-
-//***
-// Global Declaration
-//***
+/**
+ * Project Name: Arduino Projects Book - Project 10: Zoetrope
+ *
+ * File Name: zoetrope.ino
+ *
+ * Description: Control the speed and the direction of the DC motor using
+ * two switches and a potentiometer
+ *
+ * Compatibility: Arduino UNO
+ *
+ * Phi Luu
+ * Portland, Oregon, United States
+ * Created August 21, 2016
+ * Updated January 15, 2017
+ */
 
 // Required hardware I/O connections
 const byte potPin      = A0;   // connect potentiometer to A0
@@ -36,10 +30,6 @@ byte prevDirSwitchVal     = 0; // previous direction switch
 byte motorEnabled         = 0; // whether the motor is on/off
 byte motorDirection       = 0; // motor direction
 unsigned short motorSpeed = 0;
-
-//***
-// Mandatory Routines
-//***
 
 void setup() {
     pinMode(dirSwitch,   INPUT);

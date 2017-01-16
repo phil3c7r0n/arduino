@@ -1,29 +1,20 @@
-//****************************************************************************
-//
-// Project Name: Arduino Projects Book - Project 05: Mood Cue
-//
-// File Name: mood_cue.ino
-//
-// Description: Express your feeling by a servo motor
-//
-// Compatibility: Arduino UNO
-//
-// Phi Luu
-// Portland, Oregon, United States
-// Created November 21, 2015
-// Updated January 07, 2017
-//
-//****************************************************************************
+/**
+ * Project Name: Arduino Projects Book - Project 05: Mood Cue
+ *
+ * File Name: mood_cue.ino
+ *
+ * Description: Express your feeling by a servo motor
+ *
+ * Compatibility: Arduino UNO
+ *
+ * Phi Luu
+ * Portland, Oregon, United States
+ * Created November 21, 2015
+ * Updated January 15, 2017
+ */
 
-//***
-// Preprocessor Directives
-//***
-
-#include <Servo.h> // include Servo library for servo motors
-
-//***
-// Global Declaration
-//***
+// include Servo library for servo motors
+#include <Servo.h>
 
 // Required hardware I/O connections
 const byte potPin   = A0;            // connect potentiometer to A0
@@ -39,13 +30,9 @@ const unsigned int BAUD_RATE = 9600; // serial monitor's baud rate
 unsigned int  potVal;                // potentiometer
 unsigned char angle;                 // servo's angle
 
-//***
-// Mandatory Routines
-//***
-
 void setup() {
-    myServo.attach(servoPin); // attach myServo into servoPin
-    Serial.begin(BAUD_RATE);  // start the Serial Monitor
+    myServo.attach(servoPin);        // attach myServo into servoPin
+    Serial.begin(BAUD_RATE);         // start the Serial Monitor
 }
 
 void loop() {

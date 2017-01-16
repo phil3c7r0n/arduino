@@ -1,24 +1,18 @@
-//****************************************************************************
-//
-// Project Name: Arduino Projects Book - Project 08: Digital Hourglass
-//
-// File Name: digital-hourglass.ino
-//
-// Description: A digital hourglass that turns on a LED every 2 seconds.
-//   It works just like an hourglass, but digitally.
-//
-// Compatibility: Arduino UNO
-//
-// Phi Luu
-// Portland, Oregon, United States
-// Created July 27, 2016
-// Updated January 07, 2017
-//
-//****************************************************************************
-
-//***
-// Global Declaration
-//***
+/**
+ * Project Name: Arduino Projects Book - Project 08: Digital Hourglass
+ *
+ * File Name: digital-hourglass.ino
+ *
+ * Description: A digital hourglass that turns on a LED every 2 seconds.
+ * It works just like an hourglass, but digitally.
+ *
+ * Compatibility: Arduino UNO
+ *
+ * Phi Luu
+ * Portland, Oregon, United States
+ * Created July 27, 2016
+ * Updated January 15, 2017
+ */
 
 // Required hardware I/O connections
 const byte led1Pin   = 2; // connect led1 to 2
@@ -35,10 +29,6 @@ byte currSwitchState   = 0;
 byte prevSwitchState   = 0;
 byte currLed           = led1Pin;
 unsigned long interval = 2000; // time delay between each event
-
-//***
-// Mandatory Routines
-//***
 
 void setup() {
     for (byte led = led1Pin; led <= led6Pin; led++) {

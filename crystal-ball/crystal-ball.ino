@@ -1,30 +1,20 @@
-//****************************************************************************
-//
-// Project Name: Arduino Projects Book - Project 11: Crystal Ball
-//
-// File Name: crystal-ball.ino
-//
-// Description: Use the LCD to help "predict" the future when tilting the
-// tilt switch
-//
-// Compatibility: Arduino UNO
-//
-// Phi Luu
-// Portland, Oregon, United States
-// Created August 26, 2016
-// Updated January 07, 2017
-//
-//****************************************************************************
-
-//***
-// Preprocessor Directives
-//***
+/**
+ * Project Name: Arduino Projects Book - Project 11: Crystal Ball
+ *
+ * File Name: crystal-ball.ino
+ *
+ * Description: Use the LCD to help "predict" the future when tilting the
+ * tilt switch
+ *
+ * Compatibility: Arduino UNO
+ *
+ * Phi Luu
+ * Portland, Oregon, United States
+ * Created August 26, 2016
+ * Updated January 15, 2017
+ */
 
 #include <LiquidCrystal.h>
-
-//***
-// Global Declaration
-//***
 
 // Required hardware I/O connections
 const byte lcdD7     = 2;  // connect D7 of the LCD to 2
@@ -46,10 +36,6 @@ const byte LCDH = 2;  // LCD height
 byte switchVal     = 0;
 byte prevSwitchVal = 0;
 byte reply         = 0; // varies from 0 to 7
-
-//***
-// Mandatory Routines
-//***
 
 void setup() {
     lcd.begin(LCDW, LCDH);

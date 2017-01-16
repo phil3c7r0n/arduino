@@ -1,24 +1,18 @@
-//****************************************************************************
-//
-// Project Name: Arduino Projects Book - Project 07: Keyboard Instrument
-//
-// File Name: keyboard_instrument.ino
-//
-// Description: Simulate keys C, D, E, and F of the real piano
-// using push buttons and piezo buzzer
-//
-// Compatibility: Arduino UNO
-//
-// Phi Luu
-// Portland, Oregon, United States
-// Created March 05, 2016
-// Updated January 07, 2017
-//
-//****************************************************************************
-
-//***
-// Global Declaration
-//***
+/**
+ * Project Name: Arduino Projects Book - Project 07: Keyboard Instrument
+ *
+ * File Name: keyboard_instrument.ino
+ *
+ * Description: Simulate keys C, D, E, and F of the real piano
+ * using push buttons and piezo buzzer
+ *
+ * Compatibility: Arduino UNO
+ *
+ * Phi Luu
+ * Portland, Oregon, United States
+ * Created March 05, 2016
+ * Updated January 15, 2017
+ */
 
 // Required hardware I/O connections
 const byte keyboard = A0;                   // connect keyboard to A0
@@ -30,10 +24,6 @@ const unsigned int BAUD_RATE = 9600;        // serial monitor's baud rate
 
 // Global variables
 unsigned int keyVal;
-
-//***
-// Mandatory Routines
-//***
 
 void setup() {
     Serial.begin(BAUD_RATE);   // start the serial monitor

@@ -1,23 +1,17 @@
-//****************************************************************************
-//
-// Project Name: Arduino Projects Book - Project 06: Light Theremin
-//
-// File Name: light_theremin.ino
-//
-// Description: Make a light-based theremin using photocells and a buzzer
-//
-// Compatibility: Arduino UNO
-//
-// Phi Luu
-// Portland, Oregon, United States
-// Created January 10, 2016
-// Updated January 07, 2017
-//
-//****************************************************************************
-
-//***
-// Global Declaration
-//***
+/**
+ * Project Name: Arduino Projects Book - Project 06: Light Theremin
+ *
+ * File Name: light_theremin.ino
+ *
+ * Description: Make a light-based theremin using photocells and a buzzer
+ *
+ * Compatibility: Arduino UNO
+ *
+ * Phi Luu
+ * Portland, Oregon, United States
+ * Created January 10, 2016
+ * Updated January 15, 2017
+ */
 
 // Required hardware I/O connections
 const byte sensorPin = A0; // connect photocell to A0
@@ -28,10 +22,6 @@ const byte ledPin    = 4;  // connect LED to 4
 unsigned int sensorValue;
 unsigned int sensorHigh = 0;    // initial min of the photocell
 unsigned int sensorLow  = 1023; // initial max of the photocell
-
-//***
-// Mandatory Routines
-//***
 
 void setup() {
     pinMode(piezoPin, OUTPUT);

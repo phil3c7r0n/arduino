@@ -1,30 +1,20 @@
-//****************************************************************************
-//
-// Project Name: Arduino Projects Book - Project 13: Touchy-feely Lamp
-//
-// File Name: touchy-feely-lamp.ino
-//
-// Description: Use the capacitance of your body to turn a LED on/off
-// when you touch a piece of conductive material.
-//
-// Compatibility: Arduino UNO
-//
-// Phi Luu
-// Portland, Oregon, United States
-// Created December 18, 2016
-// Updated January 07, 2017
-//
-//****************************************************************************
-
-//***
-// Preprocessor Directives
-//***
+/**
+ * Project Name: Arduino Projects Book - Project 13: Touchy-feely Lamp
+ *
+ * File Name: touchy-feely-lamp.ino
+ *
+ * Description: Use the capacitance of your body to turn a LED on/off
+ * when you touch a piece of conductive material.
+ *
+ * Compatibility: Arduino UNO
+ *
+ * Phi Luu
+ * Portland, Oregon, United States
+ * Created December 18, 2016
+ * Updated January 15, 2017
+ */
 
 #include <CapacitiveSensor.h>
-
-//***
-// Global Declaration
-//***
 
 // Required hardware I/O connections
 const byte receivingPin = 2;  // capacitance receiving pin connected to 2
@@ -37,10 +27,6 @@ CapacitiveSensor capSensor = CapacitiveSensor(sendingPin, receivingPin);
 // Global constants
 const int threshold            = 45; // different people may have different values
 const unsigned short BAUD_RATE = 9600;
-
-//***
-// Mandatory Routines
-//***
 
 void setup() {
     Serial.begin(BAUD_RATE);

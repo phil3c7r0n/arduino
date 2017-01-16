@@ -1,29 +1,22 @@
-//***************************************************************************
-//
-// Project Name: DIY Arduino - Project 01: Letter P
-//
-// File Name: letter_p.ino
-//
-// Description: Make a beautiful effect of letter P
-// LEDs arrangement
-//      LED4 LED5
-//      LED3 LED6
-//      LED2
-//      LED1
-//
-// Compatibility: Arduino UNO
-//
-// Phi Luu
-// Portland, Oregon, United States
-// Created September 29, 2015
-// Updated January 07, 2017
-//
-//****************************************************************************
-
-
-//***
-// Global Declaration
-//***
+/**
+ * Project Name: DIY Arduino - Project 01: Letter P
+ *
+ * File Name: letter_p.ino
+ *
+ * Description: Make a beautiful effect of letter P
+ * LEDs arrangement
+ *    LED4 LED5
+ *    LED3 LED6
+ *    LED2
+ *    LED1
+ *
+ * Compatibility: Arduino UNO
+ *
+ * Phi Luu
+ * Portland, Oregon, United States
+ * Created September 29, 2015
+ * Updated January 15, 2017
+ */
 
 // Required hardware I/O connections
 const byte LED1 = 2;           // connect LED 1 to 2
@@ -35,10 +28,6 @@ const byte LED6 = 7;           // connect LED6 to 7
 
 // Global constants
 const unsigned int TIME = 100; // time to blink between LEDs
-
-//***
-// Mandatory Routines
-//***
 
 void setup() {
     for (byte pinNumber = LED1; pinNumber <= LED6; pinNumber++) {
