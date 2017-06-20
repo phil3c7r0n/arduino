@@ -11,12 +11,12 @@
  * Phi Luu
  * Portland, Oregon, United States
  * Created December 13, 2015
- * Updated January 15, 2017
+ * Updated June 20, 2017
  */
 
 // Required hardware I/O connections
 const byte photoPin = A0; // connect photocell to A0
-const byte ledPin   = 12; // connect LED to 12
+const byte ledPin   = 2;  // connect LED to 2
 
 // Global constants
 const unsigned short photoThres = 100;
