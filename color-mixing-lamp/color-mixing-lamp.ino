@@ -11,15 +11,15 @@
  * Phi Luu
  * Portland, Oregon, United States
  * Created October 25, 2015
- * Updated January 15, 2017
+ * Updated June 20, 2017
  */
 
 // Required hardware I/O connections
 const byte redSensorPin   = A0; // connect red sensor to A0
 const byte greenSensorPin = A1; // connect green sensor to A1
 const byte blueSensorPin  = A2; // connect blue sensor to A2
-const byte greenLEDPin    = 9;  // connect blue pin of the RGB LED to ~9
-const byte blueLEDPin     = 10; // connect green pin of the RGB LED to ~10
+const byte greenLEDPin    = 9;  // connect green pin of the RGB LED to ~9
+const byte blueLEDPin     = 10; // connect blue pin of the RGB LED to ~10
 const byte redLEDPin      = 11; // connect red pin of the RGB LED to ~11
 
 // Global constants
