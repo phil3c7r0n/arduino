@@ -12,23 +12,23 @@
  */
 
 // Required hardware I/O connections
-const byte photo_pin = A0; // connect photocell to A0
-const byte led_pin   = 2;  // connect LED to 2
+const byte PHOTO_PIN = A0; // connect photocell to A0
+const byte LED_PIN   = 2;  // connect LED to 2
 
 // Global constants
-const unsigned short PHOTO_THRESHOLD = 100;
+const unsigned short THRESHOLD = 100;
 
 void setup() {
-    pinMode(led_pin, OUTPUT);
+    pinMode(LED_PIN, OUTPUT);
 }
 
 void loop() {
-    int photo_val = analogRead(photo_pin);
+    int photo_val = analogRead(PHOTO_PIN);
 
     // toggle the light based on the threshold of light
-    if (photo_val < PHOTO_THRESHOLD) {
-        digitalWrite(led_pin, HIGH);
+    if (photo_val < THRESHOLD) {
+        digitalWrite(LED_PIN, HIGH);
     } else {
-        digitalWrite(led_pin, LOW);
+        digitalWrite(LED_PIN, LOW);
     }
 }

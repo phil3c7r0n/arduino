@@ -12,21 +12,21 @@
  */
 
 // Required hardware I/O connections
-const byte switch_pin = 2; // connect switch to 2
-const byte motor_pin  = 9; // connect dc motor to ~9
+const byte SWITCH_PIN = 2; // connect switch to 2
+const byte MOTOR_PIN  = 9; // connect dc motor to ~9
 
 void setup() {
-    pinMode(switch_pin, INPUT);
-    pinMode(motor_pin,  OUTPUT);
+    pinMode(SWITCH_PIN, INPUT);
+    pinMode(MOTOR_PIN,  OUTPUT);
 }
 
 void loop() {
-    byte switch_state = digitalRead(switch_pin);
+    byte switch_state = digitalRead(SWITCH_PIN);
 
     // toggle the switch to toggle the motor
     if (switch_state) {
-        digitalWrite(motor_pin, HIGH);
+        digitalWrite(MOTOR_PIN, HIGH);
     } else {
-        digitalWrite(motor_pin, LOW);
+        digitalWrite(MOTOR_PIN, LOW);
     }
 }

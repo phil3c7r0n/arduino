@@ -15,8 +15,8 @@
 #include <Servo.h>
 
 // Required hardware I/O connections
-const byte pot_pin   = A0;           // connect potentiometer to A0
-const byte servo_pin = 3;            // connect servo motor to ~3
+const byte POT_PIN   = A0;           // connect potentiometer to A0
+const byte SERVO_PIN = 3;            // connect servo motor to ~3
 
 // Servo class
 Servo MyServo;                       // declare MyServo
@@ -29,13 +29,13 @@ unsigned int  pot_val;               // potentiometer
 unsigned char angle;                 // servo's angle
 
 void setup() {
-    MyServo.attach(servo_pin);       // attach MyServo into servo_pin
+    MyServo.attach(SERVO_PIN);       // attach MyServo into SERVO_PIN
     Serial.begin(BAUD_RATE);         // start the Serial Monitor
 }
 
 void loop() {
     // read & print potentiometer value
-    pot_val = analogRead(pot_pin);
+    pot_val = analogRead(POT_PIN);
     Serial.print("pot_val: ");
     Serial.print(pot_val);
     // map & print from pot value to angle

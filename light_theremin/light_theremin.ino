@@ -12,9 +12,9 @@
  */
 
 // Required hardware I/O connections
-const byte sensor_pin = A0; // connect photocell to A0
-const byte piezo_pin  = 2;  // connect buzzer to 2
-const byte led_pin    = 4;  // connect LED to 4
+const byte SENSOR_PIN = A0; // connect photocell to A0
+const byte PIEZO_PIN  = 2;  // connect buzzer to 2
+const byte LED_PIN    = 4;  // connect LED to 4
 
 // Global variables
 unsigned int sensor_val;
@@ -22,13 +22,13 @@ unsigned int sensor_high = 0;    // initial min of the photocell
 unsigned int sensor_low  = 1023; // initial max of the photocell
 
 void setup() {
-    pinMode(piezo_pin, OUTPUT);
-    pinMode(led_pin,   OUTPUT);
+    pinMode(PIEZO_PIN, OUTPUT);
+    pinMode(LED_PIN,   OUTPUT);
     // calibrate the photocell for 5 seconds - red light turned on
-    digitalWrite(led_pin, HIGH);
+    digitalWrite(LED_PIN, HIGH);
 
     while (millis() < 5000) {
-        sensor_val = analogRead(sensor_pin);
+        sensor_val = analogRead(SENSOR_PIN);
 
         if (sensor_val > sensor_high) {
             sensor_high = sensor_val; // set new max value
@@ -39,15 +39,15 @@ void setup() {
         }
     }
     // calibration completed - red light turned off
-    digitalWrite(led_pin, LOW);
+    digitalWrite(LED_PIN, LOW);
 }
 
 void loop() {
-    sensor_val = analogRead(sensor_pin);
+    sensor_val = analogRead(SENSOR_PIN);
     // determine the pitch of the piezo
     unsigned int pitch = map(sensor_val, sensor_low, sensor_high, 50, 4000);
     // play the piezo with the pitch for 20 milliseconds
-    tone(piezo_pin, pitch, 20);
+    tone(PIEZO_PIN, pitch, 20);
     // wait 10ms for the sensor to stabilize
     delay(10);
 }

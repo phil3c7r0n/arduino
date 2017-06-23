@@ -14,7 +14,7 @@
  */
 
 // Required hardware I/O connections
-const byte pot_pin = A0;     // potentiometer connected to A0
+const byte POT_PIN = A0;     // potentiometer connected to A0
 
 // Global constants
 const int BAUD_RATE = 19200; // for serial monitor
@@ -26,6 +26,6 @@ void setup() {
 void loop() {
     // potentiometer reads values from 0 to 1024
     // map it to 0-255 to speed up the communication
-    Serial.write(analogRead(pot_pin) / 4);
+    Serial.write(analogRead(POT_PIN) / 4);
     delay(1); // stabilize the pot
 }

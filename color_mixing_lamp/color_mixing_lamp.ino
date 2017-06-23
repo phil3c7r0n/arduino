@@ -13,12 +13,12 @@
  */
 
 // Required hardware I/O connections
-const byte red_sensor_pin   = A0; // connect red sensor to A0
-const byte green_sensor_pin = A1; // connect green sensor to A1
-const byte blue_sensor_pin  = A2; // connect blue sensor to A2
-const byte green_led_pin    = 9;  // connect green pin of the RGB LED to ~9
-const byte blue_led_pin     = 10; // connect blue pin of the RGB LED to ~10
-const byte red_led_pin      = 11; // connect red pin of the RGB LED to ~11
+const byte RED_SENSOR_PIN   = A0; // connect red sensor to A0
+const byte GREEN_SENSOR_PIN = A1; // connect green sensor to A1
+const byte BLUE_SENSOR_PIN  = A2; // connect blue sensor to A2
+const byte GREEN_LED_PIN    = 9;  // connect green pin of the RGB LED to ~9
+const byte BLUE_LED_PIN     = 10; // connect blue pin of the RGB LED to ~10
+const byte RED_LED_PIN      = 11; // connect red pin of the RGB LED to ~11
 
 // Global constants
 const unsigned int BAUD_RATE = 9600;
@@ -33,19 +33,19 @@ unsigned int green_sensor_value = 0;
 
 void setup() {
     Serial.begin(BAUD_RATE);
-    pinMode(red_led_pin,   OUTPUT);
-    pinMode(blue_led_pin,  OUTPUT);
-    pinMode(green_led_pin, OUTPUT);
+    pinMode(RED_LED_PIN,   OUTPUT);
+    pinMode(BLUE_LED_PIN,  OUTPUT);
+    pinMode(GREEN_LED_PIN, OUTPUT);
 }
 
 void loop() {
     // read the values from the sensors
     // leave 5 miliseconds for Analog - Digital Conversion
-    red_sensor_value = analogRead(red_sensor_pin);
+    red_sensor_value = analogRead(RED_SENSOR_PIN);
     delay(5);
-    blue_sensor_value = analogRead(blue_sensor_pin);
+    blue_sensor_value = analogRead(BLUE_SENSOR_PIN);
     delay(5);
-    green_sensor_value = analogRead(green_sensor_pin);
+    green_sensor_value = analogRead(GREEN_SENSOR_PIN);
 
     // print those values onto the serial monitor
     Serial.println("Raw Sensor Values:");
@@ -71,7 +71,7 @@ void loop() {
     Serial.println(green_led_value);
 
     // use analogWrite() to set output for RGB LED
-    analogWrite(red_led_pin,   red_led_value);   // indicate red LED
-    analogWrite(blue_led_pin,  blue_led_value);  // indicate blue LED
-    analogWrite(green_led_pin, green_led_value); // indicate green LED
+    analogWrite(RED_LED_PIN,   red_led_value);   // indicate red LED
+    analogWrite(BLUE_LED_PIN,  blue_led_value);  // indicate blue LED
+    analogWrite(GREEN_LED_PIN, green_led_value); // indicate green LED
 }

@@ -15,12 +15,12 @@
 #include <CapacitiveSensor.h>
 
 // Required hardware I/O connections
-const byte receiving_pin = 2;  // capacitance receiving pin connected to 2
-const byte sending_pin   = 4;  // capacitance sending pin connected to 4
-const byte led_pin       = 12; // indicator LED pin connected to 12
+const byte RECEIVING_PIN = 2;  // capacitance receiving pin connected to 2
+const byte SENDING_PIN   = 4;  // capacitance sending pin connected to 4
+const byte LED_PIN       = 12; // indicator LED pin connected to 12
 
 // CapSensor class
-CapacitiveSensor CapSensor = CapacitiveSensor(sending_pin, receiving_pin);
+CapacitiveSensor CapSensor = CapacitiveSensor(SENDING_PIN, RECEIVING_PIN);
 
 // Global constants
 const int THRESHOLD            = 45; // different people may have different values
@@ -28,7 +28,7 @@ const unsigned short BAUD_RATE = 9600;
 
 void setup() {
     Serial.begin(BAUD_RATE);
-    pinMode(led_pin, OUTPUT);
+    pinMode(LED_PIN, OUTPUT);
 }
 
 void loop() {
@@ -40,9 +40,9 @@ void loop() {
 
     // turn on the LED if the capacitance is over the THRESHOLD
     if (sensor_val > THRESHOLD) {
-        digitalWrite(led_pin, HIGH);
+        digitalWrite(LED_PIN, HIGH);
     } else {
-        digitalWrite(led_pin, LOW);
+        digitalWrite(LED_PIN, LOW);
     }
 
     // delay helps stabilize the sensor
