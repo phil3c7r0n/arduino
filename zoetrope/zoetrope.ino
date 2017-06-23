@@ -3,79 +3,77 @@
  *
  * File Name: zoetrope.ino
  *
- * Description: Control the speed and the direction of the DC motor using
- * two switches and a potentiometer
+ * Description: Controls the speed and the direction of the DC motor using
+ * two switches and a potentiometer.
  *
- * Compatibility: Arduino UNO
- *
- * Phi Luu
- * Portland, Oregon, United States
- * Created August 21, 2016
- * Updated January 15, 2017
+ * Author: Phi Luu
+ * Location: Portland, Oregon, United States
+ * Created: August 21, 2016
+ * Updated: June 22, 2017
  */
 
 // Required hardware I/O connections
-const byte potPin      = A0;   // connect potentiometer to A0
-const byte icInput1    = 3;    // connect IC Input1 to ~3
-const byte icInput2    = 2;    // connect IC Input2 to 2
-const byte icEnable1   = 9;    // connect IC Enable1 t ~9
-const byte dirSwitch   = 4;    // connect direction switch to 4
-const byte stateSwitch = 5;    // connect state switch to ~5
+const byte pot_pin              = A0; // connect potentiometer to A0
+const byte ic_input_1           = 3;  // connect IC Input1 to ~3
+const byte ic_input_2           = 2;  // connect IC Input2 to 2
+const byte ic_enable_1          = 9;  // connect IC Enable1 t ~9
+const byte direction_switch_pin = 4;  // connect direction switch to 4
+const byte state_switch_pin     = 5;  // connect state switch to ~5
 
 // Global variables
-byte stateSwitchVal       = 0; // state switch
-byte dirSwitchVal         = 0; // direction switch
-byte prevStateSwitchVal   = 0; // previous state switch
-byte prevDirSwitchVal     = 0; // previous direction switch
-byte motorEnabled         = 0; // whether the motor is on/off
-byte motorDirection       = 0; // motor direction
-unsigned short motorSpeed = 0;
+byte state_switch_val          = 0;   // state switch
+byte direction_switch_val      = 0;   // direction switch
+byte prev_state_switch_val     = 0;   // previous state switch
+byte prev_direction_switch_val = 0;   // previous direction switch
+byte motor_is_enabled          = 0;   // whether the motor is on/off
+byte motor_direction           = 0;   // motor direction
+unsigned short motor_speed     = 0;
 
 void setup() {
-    pinMode(dirSwitch,   INPUT);
-    pinMode(stateSwitch, INPUT);
-    pinMode(icInput1,    OUTPUT);
-    pinMode(icInput2,    OUTPUT);
-    pinMode(icEnable1,   OUTPUT);
+    pinMode(direction_switch_pin, INPUT);
+    pinMode(state_switch_pin,     INPUT);
+    pinMode(ic_input_1,           OUTPUT);
+    pinMode(ic_input_2,           OUTPUT);
+    pinMode(ic_enable_1,          OUTPUT);
 }
 
 void loop() {
-    stateSwitchVal = digitalRead(stateSwitch);
+    state_switch_val = digitalRead(state_switch_pin);
     delay(1);
-    dirSwitchVal = digitalRead(dirSwitch);
-    motorSpeed   = analogRead(potPin) / 4;
+    direction_switch_val = digitalRead(direction_switch_pin);
+    motor_speed          = analogRead(pot_pin) / 4;
 
     // process the on/off state of the motor from the state switch
-    if (stateSwitchVal != prevStateSwitchVal) {
-        if (stateSwitchVal) {
-            motorEnabled = !motorEnabled;
+    if (state_switch_val != prev_state_switch_val) {
+        if (state_switch_val) {
+            motor_is_enabled = !motor_is_enabled;
         }
     }
 
     // process the direction of the motor from the direction switch
-    if (dirSwitchVal != prevDirSwitchVal) {
-        if (dirSwitchVal) {
-            motorDirection = !motorDirection;
+    if (direction_switch_val != prev_direction_switch_val) {
+        if (direction_switch_val) {
+            motor_direction = !motor_direction;
         }
     }
 
     // control the direction of the motor using the IC
-    if (motorDirection) {
-        digitalWrite(icInput1, LOW);
-        digitalWrite(icInput2, HIGH);
+    if (motor_direction) {
+        digitalWrite(ic_input_1, LOW);
+        digitalWrite(ic_input_2, HIGH);
     } else {
-        digitalWrite(icInput1, HIGH);
-        digitalWrite(icInput2, LOW);
+        digitalWrite(ic_input_1, HIGH);
+        digitalWrite(ic_input_2, LOW);
     }
 
     // control the on/off state of the motor using PWM
-    if (motorEnabled) {
-        analogWrite(icEnable1, motorSpeed);
+    if (motor_is_enabled) {
+        analogWrite(ic_enable_1, motor_speed);
     } else {
-        analogWrite(icEnable1, 0);
+        analogWrite(ic_enable_1, 0);
     }
 
     // prep for next inputs
-    prevStateSwitchVal = stateSwitchVal;
-    prevDirSwitchVal   = dirSwitchVal;
+    prev_state_switch_val     = state_switch_val;
+    prev_direction_switch_val = direction_switch_val;
 }

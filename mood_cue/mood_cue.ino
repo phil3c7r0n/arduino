@@ -3,49 +3,47 @@
  *
  * File Name: mood_cue.ino
  *
- * Description: Express your feeling by a servo motor
+ * Description: Expresses your feeling by a servo motor.
  *
- * Compatibility: Arduino UNO
- *
- * Phi Luu
- * Portland, Oregon, United States
- * Created November 21, 2015
- * Updated January 15, 2017
+ * Author: Phi Luu
+ * Location: Portland, Oregon, United States
+ * Created: November 21, 2015
+ * Updated: June 22, 2017
  */
 
 // include Servo library for servo motors
 #include <Servo.h>
 
 // Required hardware I/O connections
-const byte potPin   = A0;            // connect potentiometer to A0
-const byte servoPin = 3;             // connect servo motor to ~3
+const byte pot_pin   = A0;           // connect potentiometer to A0
+const byte servo_pin = 3;            // connect servo motor to ~3
 
 // Servo class
-Servo myServo;                       // declare myServo
+Servo MyServo;                       // declare MyServo
 
 // Global constants
 const unsigned int BAUD_RATE = 9600; // serial monitor's baud rate
 
 // Global variables
-unsigned int  potVal;                // potentiometer
+unsigned int  pot_val;               // potentiometer
 unsigned char angle;                 // servo's angle
 
 void setup() {
-    myServo.attach(servoPin);        // attach myServo into servoPin
+    MyServo.attach(servo_pin);       // attach MyServo into servo_pin
     Serial.begin(BAUD_RATE);         // start the Serial Monitor
 }
 
 void loop() {
     // read & print potentiometer value
-    potVal = analogRead(potPin);
-    Serial.print("potVal: ");
-    Serial.print(potVal);
+    pot_val = analogRead(pot_pin);
+    Serial.print("pot_val: ");
+    Serial.print(pot_val);
     // map & print from pot value to angle
-    angle = map(potVal, 0, 1023, 0, 179);
+    angle = map(pot_val, 0, 1023, 0, 179);
     Serial.print(", angle: ");
     Serial.println(angle);
     // run the servo by the angle
-    myServo.write(angle);
+    MyServo.write(angle);
     // delay to stabilize
     delay(15);
 }

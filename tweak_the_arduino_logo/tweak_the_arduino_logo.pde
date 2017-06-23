@@ -4,24 +4,22 @@
  * File Name: tweak_the_arduino_logo.pde
  *
  * Description: Using serial communication, the Arduino can send and receive
- * information to the computer. Draw the Arduino logo on the computer screen
+ * information to the computer. Draws the Arduino logo on the computer screen
  * and adjust the background color by the potentiometer
  *
- * Compatibility: Arduino UNO
- *
- * Phi Luu
- * Portland, Oregon, United States
- * Created January 07, 2017
- * Updated January 15, 2017
+ * Author: Phi Luu
+ * Location: Portland, Oregon, United States
+ * Created: January 07, 2017
+ * Updated: June 22, 2017
  */
 
 import processing.serial.*;
-Serial myPort;
+Serial MyPort;
 PImage logo;
 
 // Global constants
-final int BAUD_RATE      = 19200; // must be the same as the Arduino
-final String logoAddress = "http://www.arduino.cc/arduino_logo.png";
+final int BAUD_RATE       = 19200; // must be the same as the Arduino
+final String LOGO_ADDRESS = "http://www.arduino.cc/arduino_logo.png";
 
 // Global variables
 int bgcolor = 0; // holds the background color
@@ -33,7 +31,7 @@ void setup() {
     colorMode(HSB, 255);
 
     // load the Arduino logo into the PImage instance
-    logo = loadImage(logoAddress);
+    logo = loadImage(LOGO_ADDRESS);
 
     // make the window the same size as the image
     surface.setSize(logo.width, logo.height);
@@ -44,13 +42,13 @@ void setup() {
     println(Serial.list());
 
     // Tell the serial object the information it needs to communicate
-    myPort = new Serial(this, Serial.list()[0], BAUD_RATE);
+    MyPort = new Serial(this, Serial.list()[0], BAUD_RATE);
 }
 
 void draw() {
-    if (myPort.available() > 0) {
+    if (MyPort.available() > 0) {
         // read and print for easy debugging
-        bgcolor = myPort.read();
+        bgcolor = MyPort.read();
         println(bgcolor);
 
         // draw the background by RGB color (each channel ranges 0-255)

@@ -1,45 +1,43 @@
 /**
  * Project Name: Arduino Projects Book - Project 11: Crystal Ball
  *
- * File Name: crystal-ball.ino
+ * File Name: crystal_ball.ino
  *
- * Description: Use the LCD to help "predict" the future when tilting the
- * tilt switch
+ * Description: Uses the LCD to help "predict" the future when tilting the
+ * tilt switch.
  *
- * Compatibility: Arduino UNO
- *
- * Phi Luu
- * Portland, Oregon, United States
- * Created August 26, 2016
- * Updated January 15, 2017
+ * Author: Phi Luu
+ * Location: Portland, Oregon, United States
+ * Created: August 26, 2016
+ * Updated: June 22, 2017
  */
 
 #include <LiquidCrystal.h>
 
 // Required hardware I/O connections
-const byte lcdD7     = 2;  // connect D7 of the LCD to 2
-const byte lcdD6     = 3;  // connect D6 of the LCD to ~3
-const byte lcdD5     = 4;  // connect D5 of the LCD to 4
-const byte lcdD4     = 5;  // connect D4 of the LCD to ~5
-const byte lcdE      = 11; // connect E of the LCD to ~11
-const byte lcdRS     = 12; // connect RS of the LCD to 12
-const byte switchPin = 6;  // connect the tilt switch to ~6
+const byte lcd_d7     = 2;  // connect D7 of the LCD to 2
+const byte lcd_d6     = 3;  // connect D6 of the LCD to ~3
+const byte lcd_d5     = 4;  // connect D5 of the LCD to 4
+const byte lcd_d4     = 5;  // connect D4 of the LCD to ~5
+const byte lcd_e      = 11; // connect E of the LCD to ~11
+const byte lcd_rs     = 12; // connect RS of the LCD to 12
+const byte switch_pin = 6;  // connect the tilt switch to ~6
 
 // LiquidCrystal(rs, enable, d4, d5, d6, d7)
-LiquidCrystal lcd(lcdRS, lcdE, lcdD4, lcdD5, lcdD6, lcdD7);
+LiquidCrystal lcd(lcd_rs, lcd_e, lcd_d4, lcd_d5, lcd_d6, lcd_d7);
 
 // Global constants
-const byte LCDW = 16; // LCD width
-const byte LCDH = 2;  // LCD height
+const byte LCD_WIDTH  = 16;
+const byte LCD_HEIGHT = 2;
 
 // Global variables
-byte switchVal     = 0;
-byte prevSwitchVal = 0;
-byte reply         = 0; // varies from 0 to 7
+byte switch_val      = 0;
+byte prev_switch_val = 0;
+byte reply           = 0; // varies from 0 to 7
 
 void setup() {
-    lcd.begin(LCDW, LCDH);
-    pinMode(switchPin, INPUT);
+    lcd.begin(LCD_WIDTH, LCD_HEIGHT);
+    pinMode(switch_pin, INPUT);
     // intro message
     lcd.setCursor(0, 0);
     lcd.print("Ask the");
@@ -48,9 +46,9 @@ void setup() {
 }
 
 void loop() {
-    switchVal = digitalRead(switchPin);
+    switch_val = digitalRead(switch_pin);
 
-    if ((switchVal != prevSwitchVal) && (switchVal == LOW)) {
+    if ((switch_val != prev_switch_val) && (switch_val == LOW)) {
         reply = random(8); // randomly choose 1 out of 8 anwers
         lcd.clear();
         lcd.setCursor(0, 0);
@@ -85,5 +83,5 @@ void loop() {
                 break;
         }
     }
-    prevSwitchVal = switchVal;
+    prev_switch_val = switch_val;
 }
