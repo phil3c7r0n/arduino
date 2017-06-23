@@ -1,19 +1,17 @@
 /**
- * Project Name: Name_of_Project
+ * Project Name: NAME_OF_PROJECT
  *
- * File Name: Name_of_File.ino
+ * File Name: NAME_OF_FILE.ino
  *
- * Description: File_Description
+ * Description: FILE_DESCRIPTION
  *
- * Compatibility: Arduino Arduino_Type
- *
- * Phi Luu
- * Portland, Oregon, United States
- * Created Created_Date
- * Updated Updated_Date
+ * Author: Phi Luu
+ * Location: Portland, Oregon, United States
+ * Created: CREATED_DATE
+ * Updated: UPDATED_DATE
  */
 
-// Required hardware I/O connections
+// Pin assignments
 
 
 // Global constants
