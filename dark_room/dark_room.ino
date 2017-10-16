@@ -1,14 +1,13 @@
 /**
- * Project Name: DIY Arduino - Project 02: Dark Room
+ * @file     dark_room.ino
+ * @author   Phi Luu
+ * @date     December 13, 2015
  *
- * File Name: dark_room.ino
+ * @brief    DIY Arduino - Project 02: Dark Room
  *
- * Description: Automatically turns on the LED when it's dark.
+ * @section  DESCRIPTION
  *
- * Author: Phi Luu
- * Location: Portland, Oregon, United States
- * Created: December 13, 2015
- * Updated: June 22, 2017
+ * Automatically turns on the LED when it's dark.
  */
 
 // Required hardware I/O connections

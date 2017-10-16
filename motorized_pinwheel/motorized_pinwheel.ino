@@ -1,14 +1,13 @@
 /**
- * Project Name: Arduino Projects Book - Project 09: Motorized Pinwheel
+ * @file     motorized_pinwheel.ino
+ * @author   Phi Luu
+ * @date     August 13, 2016
  *
- * File Name: motorized_pinwheel.ino
+ * @brief    Arduino Projects Book - Project 09: Motorized Pinwheel
  *
- * Description: Gets the Arduino to spin a colorful pinwheel using a motor.
+ * @section  DESCRIPTION
  *
- * Author: Phi Luu
- * Location: Portland, Oregon, United States
- * Created: August 13, 2016
- * Updated: June 22, 2017
+ * Gets the Arduino to spin a colorful pinwheel using a motor.
  */
 
 // Required hardware I/O connections

@@ -1,23 +1,22 @@
 /**
- * Project Name: Arduino Projects Book - Project 08: Digital Hourglass
+ * @file     digital_hourglass.ino
+ * @author   Phi Luu
+ * @date     July 27, 2016
  *
- * File Name: digital_hourglass.ino
+ * @brief    Arduino Projects Book - Project 08: Digital Hourglass
  *
- * Description: Turns on an LED every 2 second. Operates like an hourglass.
+ * @section  DESCRIPTION
  *
- * Author: Phi Luu
- * Location: Portland, Oregon, United States
- * Created: July 27, 2016
- * Updated: June 22, 2017
+ * Turns on an LED every 2 second. Operates like an hourglass.
  */
 
 // Required hardware I/O connections
-const byte LED_1_PIN   = 2; // connect led1 to 2
-const byte LED_2_PIN   = 3; // connect led2 to ~3
-const byte LED_3_PIN   = 4; // connect led3 to 4
-const byte LED_4_PIN   = 5; // connect led4 to ~5
-const byte LED_5_PIN   = 6; // connect led5 to ~6
-const byte LED_6_PIN   = 7; // connect led6 to 7
+const byte LED_1_PIN  = 2; // connect led1 to 2
+const byte LED_2_PIN  = 3; // connect led2 to ~3
+const byte LED_3_PIN  = 4; // connect led3 to 4
+const byte LED_4_PIN  = 5; // connect led4 to ~5
+const byte LED_5_PIN  = 6; // connect led5 to ~6
+const byte LED_6_PIN  = 7; // connect led6 to 7
 const byte SWITCH_PIN = 8; // connect tilt switch to 8
 
 // Global variables

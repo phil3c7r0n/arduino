@@ -1,19 +1,17 @@
 /**
- * Project Name: DIY Arduino - Project 01: Letter P
+ * @file     letter_p.ino
+ * @author   Phi Luu
+ * @date     September 29, 2015
  *
- * File Name: letter_p.ino
+ * @brief    DIY Arduino - Project 01: Letter P
  *
- * Description: Makes a beautiful effect of letter P
- * LEDs arrangement.
- *    LED_4 LED_5
- *    LED_3 LED_6
- *    LED_2
- *    LED_1
+ * @section  DESCRIPTION
  *
- * Author: Phi Luu
- * Location: Portland, Oregon, United States
- * Created: September 29, 2015
- * Updated: June 22, 2017
+ * Makes a beautiful effect of P-shaped LEDs arrangement.
+ * LED_4 LED_5
+ * LED_3 LED_6
+ * LED_2
+ * LED_1
  */
 
 // Required hardware I/O connections

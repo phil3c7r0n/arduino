@@ -1,15 +1,13 @@
 /**
- * Project Name: Arduino Projects Book - Project 11: Crystal Ball
+ * @file     crystal_ball.ino
+ * @author   Phi Luu
+ * @date     August 26, 2016
  *
- * File Name: crystal_ball.ino
+ * @brief    Arduino Projects Book - Project 11: Crystal Ball
  *
- * Description: Uses the LCD to help "predict" the future when tilting the
- * tilt switch.
+ * @section  DESCRIPTION
  *
- * Author: Phi Luu
- * Location: Portland, Oregon, United States
- * Created: August 26, 2016
- * Updated: June 22, 2017
+ * Uses the LCD to help "predict" the future when tilting the tilt switch.
  */
 
 #include <LiquidCrystal.h>

@@ -1,14 +1,13 @@
 /**
- * Project Name: Arduino Projects Book - Project 03: Love-O-Meter
+ * @file     love_o_meter.ino
+ * @author   Phi Luu
+ * @date     September 30, 2015
  *
- * File Name: love_o_meter.ino
+ * @brief    Arduino Projects Book - Project 03: Love-O-Meter
  *
- * Description: Uses the temperature sensor to test how hot you really are!
+ * @section  DESCRIPTION
  *
- * Author: Phi Luu
- * Location: Portland, Oregon, United States
- * Created: September 30, 2015
- * Updated: June 22, 2017
+ * Uses the temperature sensor to test how hot you really are!
  */
 
 // Required hardware I/O connections
@@ -50,28 +49,37 @@ void loop() {
     Serial.println();
 
     // from temperature, indicate the LEDs
-    if ((temperature >= BASE_TEMP)
-            && (temperature < BASE_TEMP + 2)) {
+    // level 1: all LEDs turned on
+    if ((temperature >= BASE_TEMP) &&
+        (temperature < BASE_TEMP + 2)) {
         digitalWrite(LED_1, HIGH);
-        digitalWrite(LED_2, HIGH); // level 1: all LEDs turned on
+        digitalWrite(LED_2, HIGH);
         digitalWrite(LED_3, HIGH);
-    } else if (temperature < BASE_TEMP) {
+    }
+    // level 0: all LEDs turned off
+    else if (temperature < BASE_TEMP) {
         digitalWrite(LED_1, LOW);
-        digitalWrite(LED_2, LOW); // level 0: all LEDs turned off
+        digitalWrite(LED_2, LOW);
         digitalWrite(LED_3, LOW);
-    } else if ((temperature >= BASE_TEMP + 2)
-               && (temperature < BASE_TEMP + 4)) {
+    }
+    // level 2: LED_1 turned on, LEDs 2 & 3 turned off
+    else if ((temperature >= BASE_TEMP + 2) &&
+             (temperature < BASE_TEMP + 4)) {
         digitalWrite(LED_1, HIGH);
-        digitalWrite(LED_2, LOW); // level 2: LED_1 turned on, LEDs 2 & 3 turned off
+        digitalWrite(LED_2, LOW);
         digitalWrite(LED_3, LOW);
-    } else if ((temperature >= BASE_TEMP + 4)
-               && (temperature < BASE_TEMP + 6)) {
+    }
+    // level 3: LED_2 turned on, LEDs 1 & 3 turned off
+    else if ((temperature >= BASE_TEMP + 4) &&
+             (temperature < BASE_TEMP + 6)) {
         digitalWrite(LED_1, LOW);
-        digitalWrite(LED_2, HIGH); // level 3: LED_2 turned on, LEDs 1 & 3 turned off
+        digitalWrite(LED_2, HIGH);
         digitalWrite(LED_3, LOW);
-    } else {
+    }
+    // level 4: LED 3 turned on, LEDs 1 & 2 turned off
+    else {
         digitalWrite(LED_1, LOW);
-        digitalWrite(LED_2, LOW); // level 4: LED 3 turned on, LEDs 1 & 2 turned off
+        digitalWrite(LED_2, LOW);
         digitalWrite(LED_3, HIGH);
     }
 }

@@ -1,15 +1,14 @@
 /**
- * Project Name: Arduino Projects Book - Project 07: Keyboard Instrument
+ * @file     keyboard_instrument.ino
+ * @author   Phi Luu
+ * @date     March 05, 2016
  *
- * File Name: KEYBOARD_instrument.ino
+ * @brief    Arduino Projects Book - Project 07: Keyboard Instrument
  *
- * Description: Simulates keys C, D, E, and F of the real piano
- * using push buttons and piezo buzzer.
+ * @section  DESCRIPTION
  *
- * Author: Phi Luu
- * Location: Portland, Oregon, United States
- * Created: March 05, 2016
- * Updated: June 22, 2017
+ * Simulates keys C, D, E, and F of the real piano using push buttons and
+ * piezo buzzer.
  */
 
 // Required hardware I/O connections

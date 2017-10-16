@@ -1,14 +1,13 @@
 /**
- * Project Name: Arduino Projects Book - Project 06: Light Theremin
+ * @file     light_theremin.ino
+ * @author   Phi Luu
+ * @date     January 10, 2016
  *
- * File Name: light_theremin.ino
+ * @brief    Arduino Projects Book - Project 06: Light Theremin
  *
- * Description: Makes a light-based theremin using photocells and a buzzer.
+ * @section  DESCRIPTION
  *
- * Author: Phi Luu
- * Location: Portland, Oregon, United States
- * Created: January 10, 2016
- * Updated: June 22, 2017
+ * Makes a light-based theremin using photocells and a buzzer.
  */
 
 // Required hardware I/O connections

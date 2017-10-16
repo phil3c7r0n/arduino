@@ -1,15 +1,14 @@
 /**
- * Project Name: Arduino Projects Book - Project 12: Knock Lock
+ * @file     knock_lock.ino
+ * @author   Phi Luu
+ * @date     September 06, 2016
  *
- * File Name: knock_lock.ino
+ * @brief    Arduino Projects Book - Project 12: Knock Lock
  *
- * Description: Uses the Piezo buzzer to make a secret locking mechanism in
- * order to keep intruders out.
+ * @section  DESCRIPTION
  *
- * Author: Phi Luu
- * Location: Portland, Oregon, United States
- * Created: September 06, 2016
- * Updated: June 22, 2017
+ * Uses the Piezo buzzer to make a secret locking mechanism in order to keep
+ * intruders out.
  */
 
 #include <Servo.h>

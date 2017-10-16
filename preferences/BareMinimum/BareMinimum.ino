@@ -1,14 +1,13 @@
 /**
- * Project Name: NAME_OF_PROJECT
+ * @file     FILE_NAME_HERE.ino
+ * @author   Phi Luu
+ * @date     DATE_HERE
  *
- * File Name: NAME_OF_FILE.ino
+ * @brief    BRIEF_HERE
  *
- * Description: FILE_DESCRIPTION
+ * @section  DESCRIPTION
  *
- * Author: Phi Luu
- * Location: Portland, Oregon, United States
- * Created: CREATED_DATE
- * Updated: UPDATED_DATE
+ * DESCRIPTION_HERE
  */
 
 // Pin assignments

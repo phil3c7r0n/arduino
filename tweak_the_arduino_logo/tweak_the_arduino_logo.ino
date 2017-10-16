@@ -1,16 +1,15 @@
 /**
- * Project Name: Arduino Projects Book - Project 14: Tweak the Arduino Logo
+ * @file     tweak_the_arduino_logo.ino
+ * @author   Phi Luu
+ * @date     January 07, 2017
  *
- * File Name: tweak_the_arduino_logo.ino
+ * @brief    Arduino Projects Book - Project 14: Tweak the Arduino Logo
  *
- * Description: Using serial communication, the Arduino can send and receive
- * information to the computer. Draws the Arduino logo on the computer screen
- * and adjust the background color by the potentiometer
+ * @section  DESCRIPTION
  *
- * Author: Phi Luu
- * Location: Portland, Oregon, United States
- * Created: January 07, 2017
- * Updated: June 22, 2017
+ * Using serial communication, the Arduino can send and receive information to
+ * the computer. Draws the Arduino logo on the computer screen and adjust the
+ * background color by the potentiometer.
  */
 
 // Required hardware I/O connections

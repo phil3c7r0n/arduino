@@ -1,14 +1,13 @@
 /**
- * Project Name: Arduino Projects Book - Project 05: Mood Cue
+ * @file     mood_cue.ino
+ * @author   Phi Luu
+ * @date     November 21, 2015
  *
- * File Name: mood_cue.ino
+ * @brief    Arduino Projects Book - Project 05: Mood Cue
  *
- * Description: Expresses your feeling by a servo motor.
+ * @section  DESCRIPTION
  *
- * Author: Phi Luu
- * Location: Portland, Oregon, United States
- * Created: November 21, 2015
- * Updated: June 22, 2017
+ * Helps express your feeling using a servo motor.
  */
 
 // include Servo library for servo motors

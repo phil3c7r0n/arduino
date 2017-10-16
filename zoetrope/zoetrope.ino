@@ -1,15 +1,14 @@
 /**
- * Project Name: Arduino Projects Book - Project 10: Zoetrope
+ * @file     zoetrope.ino
+ * @author   Phi Luu
+ * @date     August 21, 2016
  *
- * File Name: zoetrope.ino
+ * @brief    Arduino Projects Book - Project 10: Zoetrope
  *
- * Description: Controls the speed and the direction of the DC motor using
- * two switches and a potentiometer.
+ * @section  DESCRIPTION
  *
- * Author: Phi Luu
- * Location: Portland, Oregon, United States
- * Created: August 21, 2016
- * Updated: June 22, 2017
+ * Controls the speed and the direction of the DC motor using two switches and
+ * a potentiometer.
  */
 
 // Required hardware I/O connections

@@ -1,15 +1,14 @@
 /**
- * Project Name: Arduino Projects Book - Project 04: Color Mixing Lamp
+ * @file     color_mixing_lamp.ino
+ * @author   Phi Luu
+ * @date     October 25, 2015
  *
- * File Name: color_mixing_lamp.ino
+ * @brief    Arduino Projects Book - Project 04: Color Mixing Lamp
  *
- * Description: Indicates different colors on the RGB LED
- * according to the amount of light each photocell receives.
+ * @section  DESCRIPTION
  *
- * Author: Phi Luu
- * Location: Portland, Oregon, United States
- * Created: October 25, 2015
- * Updated: June 22, 2017
+ * Indicates different colors on the RGB LED according to the amount
+ * of light each photocell receives.
  */
 
 // Required hardware I/O connections

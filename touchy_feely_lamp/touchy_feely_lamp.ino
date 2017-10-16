@@ -1,15 +1,14 @@
 /**
- * Project Name: Arduino Projects Book - Project 13: Touchy-feely Lamp
+ * @file     touchy_feely_lamp.ino
+ * @author   Phi Luu
+ * @date     December 18, 2016
  *
- * File Name: touchy_feely_lamp.ino
+ * @brief    Arduino Projects Book - Project 13: Touchy-feely Lamp
  *
- * Description: Uses the capacitance of your body to turn an LED on/off
- * when you touch a piece of conductive material.
+ * @section  DESCRIPTION
  *
- * Author: Phi Luu
- * Location: Portland, Oregon, United States
- * Created: December 18, 2016
- * Updated: June 22, 2017
+ * Uses the capacitance of your body to turn an LED on/off when you touch a
+ * piece of conductive material.
  */
 
 #include <CapacitiveSensor.h>
