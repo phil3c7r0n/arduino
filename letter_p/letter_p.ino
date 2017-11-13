@@ -42,7 +42,7 @@ void loop() {
 
     // create a "running" effect on LEDs
     for (byte pin = LED_1; pin <= LED_5; pin++) {
-        digitalWrite(pin,     LOW);  // turn off this LED
+        digitalWrite(pin, LOW);      // turn off this LED
         digitalWrite(pin + 1, HIGH); // and turn on next LED
         delay(TIME);                 // turn on for TIME milliseconds
     }

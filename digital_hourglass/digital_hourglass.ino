@@ -11,20 +11,20 @@
  */
 
 // Required hardware I/O connections
-const byte LED_1_PIN  = 2; // connect led1 to 2
-const byte LED_2_PIN  = 3; // connect led2 to ~3
-const byte LED_3_PIN  = 4; // connect led3 to 4
-const byte LED_4_PIN  = 5; // connect led4 to ~5
-const byte LED_5_PIN  = 6; // connect led5 to ~6
-const byte LED_6_PIN  = 7; // connect led6 to 7
+const byte LED_1_PIN = 2;  // connect led1 to 2
+const byte LED_2_PIN = 3;  // connect led2 to ~3
+const byte LED_3_PIN = 4;  // connect led3 to 4
+const byte LED_4_PIN = 5;  // connect led4 to ~5
+const byte LED_5_PIN = 6;  // connect led5 to ~6
+const byte LED_6_PIN = 7;  // connect led6 to 7
 const byte SWITCH_PIN = 8; // connect tilt switch to 8
 
 // Global variables
 unsigned long prev_time = 0;
-byte switch_state       = 0;
-byte prev_switch_state  = 0;
-byte current_led        = LED_1_PIN;
-unsigned long interval  = 2000; // time delay between each event
+byte switch_state = 0;
+byte prev_switch_state = 0;
+byte current_led = LED_1_PIN;
+unsigned long interval = 2000; // time delay between each event
 
 void setup() {
     for (byte led = LED_1_PIN; led <= LED_6_PIN; led++) {

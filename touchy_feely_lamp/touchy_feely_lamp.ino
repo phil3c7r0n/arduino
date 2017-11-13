@@ -14,15 +14,15 @@
 #include <CapacitiveSensor.h>
 
 // Required hardware I/O connections
-const byte RECEIVING_PIN = 2;  // capacitance receiving pin connected to 2
-const byte SENDING_PIN   = 4;  // capacitance sending pin connected to 4
-const byte LED_PIN       = 12; // indicator LED pin connected to 12
+const byte RECEIVING_PIN = 2; // capacitance receiving pin connected to 2
+const byte SENDING_PIN = 4;   // capacitance sending pin connected to 4
+const byte LED_PIN = 12;      // indicator LED pin connected to 12
 
 // CapSensor class
 CapacitiveSensor CapSensor = CapacitiveSensor(SENDING_PIN, RECEIVING_PIN);
 
 // Global constants
-const int THRESHOLD            = 45; // different people may have different values
+const int THRESHOLD = 45; // different people may have different values
 const unsigned short BAUD_RATE = 9600;
 
 void setup() {

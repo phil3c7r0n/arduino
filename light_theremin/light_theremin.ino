@@ -12,17 +12,17 @@
 
 // Required hardware I/O connections
 const byte SENSOR_PIN = A0; // connect photocell to A0
-const byte PIEZO_PIN  = 2;  // connect buzzer to 2
-const byte LED_PIN    = 4;  // connect LED to 4
+const byte PIEZO_PIN = 2;   // connect buzzer to 2
+const byte LED_PIN = 4;     // connect LED to 4
 
 // Global variables
 unsigned int sensor_val;
-unsigned int sensor_high = 0;    // initial min of the photocell
-unsigned int sensor_low  = 1023; // initial max of the photocell
+unsigned int sensor_high = 0;   // initial min of the photocell
+unsigned int sensor_low = 1023; // initial max of the photocell
 
 void setup() {
     pinMode(PIEZO_PIN, OUTPUT);
-    pinMode(LED_PIN,   OUTPUT);
+    pinMode(LED_PIN, OUTPUT);
     // calibrate the photocell for 5 seconds - red light turned on
     digitalWrite(LED_PIN, HIGH);
 

@@ -12,7 +12,7 @@
 
 // Required hardware I/O connections
 const byte PHOTO_PIN = A0; // connect photocell to A0
-const byte LED_PIN   = 2;  // connect LED to 2
+const byte LED_PIN = 2;    // connect LED to 2
 
 // Global constants
 const unsigned short THRESHOLD = 100;

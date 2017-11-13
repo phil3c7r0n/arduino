@@ -12,7 +12,7 @@
  */
 
 // Required hardware I/O connections
-const byte KEYBOARD  = A0;                  // connect keyboard to A0
+const byte KEYBOARD = A0;                   // connect keyboard to A0
 const byte PIEZO_PIN = 8;                   // connect buzzer to 8
 
 // Global constants

@@ -12,9 +12,9 @@
 
 // Required hardware I/O connections
 const byte SENSOR_PIN = A0; // connect TMP sensor to A0
-const byte LED_1      = 2;  // connect LED 1 to 2
-const byte LED_2      = 3;  // connect LED 2 to ~3
-const byte LED_3      = 4;  // connect LED 3 to 4
+const byte LED_1 = 2;       // connect LED 1 to 2
+const byte LED_2 = 3;       // connect LED 2 to ~3
+const byte LED_3 = 4;       // connect LED 3 to 4
 
 // Global constants
 const float BASE_TEMP = 20.0;
@@ -50,8 +50,8 @@ void loop() {
 
     // from temperature, indicate the LEDs
     // level 1: all LEDs turned on
-    if ((temperature >= BASE_TEMP) &&
-        (temperature < BASE_TEMP + 2)) {
+    if ((temperature >= BASE_TEMP)
+        && (temperature < BASE_TEMP + 2)) {
         digitalWrite(LED_1, HIGH);
         digitalWrite(LED_2, HIGH);
         digitalWrite(LED_3, HIGH);
@@ -63,15 +63,15 @@ void loop() {
         digitalWrite(LED_3, LOW);
     }
     // level 2: LED_1 turned on, LEDs 2 & 3 turned off
-    else if ((temperature >= BASE_TEMP + 2) &&
-             (temperature < BASE_TEMP + 4)) {
+    else if ((temperature >= BASE_TEMP + 2)
+             && (temperature < BASE_TEMP + 4)) {
         digitalWrite(LED_1, HIGH);
         digitalWrite(LED_2, LOW);
         digitalWrite(LED_3, LOW);
     }
     // level 3: LED_2 turned on, LEDs 1 & 3 turned off
-    else if ((temperature >= BASE_TEMP + 4) &&
-             (temperature < BASE_TEMP + 6)) {
+    else if ((temperature >= BASE_TEMP + 4)
+             && (temperature < BASE_TEMP + 6)) {
         digitalWrite(LED_1, LOW);
         digitalWrite(LED_2, HIGH);
         digitalWrite(LED_3, LOW);

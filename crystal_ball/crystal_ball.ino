@@ -13,29 +13,30 @@
 #include <LiquidCrystal.h>
 
 // Required hardware I/O connections
-const byte LCD_D7     = 2;  // connect D7 of the LCD to 2
-const byte LCD_D6     = 3;  // connect D6 of the LCD to ~3
-const byte LCD_D5     = 4;  // connect D5 of the LCD to 4
-const byte LCD_D4     = 5;  // connect D4 of the LCD to ~5
-const byte LCD_E      = 11; // connect E of the LCD to ~11
-const byte LCD_RS     = 12; // connect RS of the LCD to 12
-const byte SWITCH_PIN = 6;  // connect the tilt switch to ~6
+const byte LCD_D7 = 2;     // connect D7 of the LCD to 2
+const byte LCD_D6 = 3;     // connect D6 of the LCD to ~3
+const byte LCD_D5 = 4;     // connect D5 of the LCD to 4
+const byte LCD_D4 = 5;     // connect D4 of the LCD to ~5
+const byte LCD_E = 11;     // connect E of the LCD to ~11
+const byte LCD_RS = 12;    // connect RS of the LCD to 12
+const byte SWITCH_PIN = 6; // connect the tilt switch to ~6
 
 // LiquidCrystal(rs, enable, d4, d5, d6, d7)
 LiquidCrystal Lcd(LCD_RS, LCD_E, LCD_D4, LCD_D5, LCD_D6, LCD_D7);
 
 // Global constants
-const byte LCD_WIDTH  = 16;
+const byte LCD_WIDTH = 16;
 const byte LCD_HEIGHT = 2;
 
 // Global variables
-byte switch_val      = 0;
+byte switch_val = 0;
 byte prev_switch_val = 0;
-byte reply           = 0; // varies from 0 to 7
+byte reply = 0; // varies from 0 to 7
 
 void setup() {
     Lcd.begin(LCD_WIDTH, LCD_HEIGHT);
     pinMode(SWITCH_PIN, INPUT);
+
     // intro message
     Lcd.setCursor(0, 0);
     Lcd.print("Ask the");

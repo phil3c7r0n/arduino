@@ -14,7 +14,7 @@
 #include <Servo.h>
 
 // Required hardware I/O connections
-const byte POT_PIN   = A0;           // connect potentiometer to A0
+const byte POT_PIN = A0;             // connect potentiometer to A0
 const byte SERVO_PIN = 3;            // connect servo motor to ~3
 
 // Servo class
@@ -24,7 +24,7 @@ Servo MyServo;                       // declare MyServo
 const unsigned int BAUD_RATE = 9600; // serial monitor's baud rate
 
 // Global variables
-unsigned int  pot_val;               // potentiometer
+unsigned int pot_val;                // potentiometer
 unsigned char angle;                 // servo's angle
 
 void setup() {

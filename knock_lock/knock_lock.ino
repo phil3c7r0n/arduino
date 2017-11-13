@@ -15,31 +15,31 @@
 Servo ServoMotor;
 
 // Required hardware I/O connections
-const byte PIEZO_PIN      = A0; // the pin piezo buzzer connected to
-const byte SWITCH_PIN     = 2;  // the pin switch connected to
-const byte YELLOW_LED_PIN = 3;  // the pin yellow LED connected to
-const byte GREEN_LED_PIN  = 4;  // the pin green LED connnected to
-const byte RED_LED_PIN    = 5;  // the pin red LED connected to
-const byte SERVO_PIN      = 9;  // the pin servo motor connected to
+const byte PIEZO_PIN = A0;     // the pin piezo buzzer connected to
+const byte SWITCH_PIN = 2;     // the pin switch connected to
+const byte YELLOW_LED_PIN = 3; // the pin yellow LED connected to
+const byte GREEN_LED_PIN = 4;  // the pin green LED connnected to
+const byte RED_LED_PIN = 5;    // the pin red LED connected to
+const byte SERVO_PIN = 9;      // the pin servo motor connected to
 
 // Global constants
 const unsigned short BAUD_RATE = 9600;
-const byte QUIET_KNOCK_VAL     = 30;
-const byte LOUD_KNOCK_VAL      = 50;
-const byte MAX_NUM_KNOCK       = 5;
+const byte QUIET_KNOCK_VAL = 30;
+const byte LOUD_KNOCK_VAL = 50;
+const byte MAX_NUM_KNOCK = 5;
 
 // Global variables
 byte switch_val;
 byte knock_val;
-boolean is_locked  = false;
-byte    num_knocks = 0;
+boolean is_locked = false;
+byte num_knocks = 0;
 
 void setup() {
     ServoMotor.attach(SERVO_PIN);
-    pinMode(SWITCH_PIN,     INPUT);
+    pinMode(SWITCH_PIN, INPUT);
     pinMode(YELLOW_LED_PIN, OUTPUT);
-    pinMode(GREEN_LED_PIN,  OUTPUT);
-    pinMode(RED_LED_PIN,    OUTPUT);
+    pinMode(GREEN_LED_PIN, OUTPUT);
+    pinMode(RED_LED_PIN, OUTPUT);
     Serial.begin(BAUD_RATE);
     // unlock the box first
     digitalWrite(GREEN_LED_PIN, HIGH);
@@ -82,7 +82,7 @@ void UnLockTheBox(void) {
     // change the is_locked value
     is_locked = false;
     // indicate on LEDs
-    digitalWrite(RED_LED_PIN,   LOW);
+    digitalWrite(RED_LED_PIN, LOW);
     digitalWrite(GREEN_LED_PIN, HIGH);
     // rotate the servo to 0 degree
     ServoMotor.write(0);
@@ -100,7 +100,7 @@ void LockTheBox(void) {
     is_locked = true;
     // indicate on LEDs
     digitalWrite(GREEN_LED_PIN, LOW);
-    digitalWrite(RED_LED_PIN,   HIGH);
+    digitalWrite(RED_LED_PIN, HIGH);
     // rotate the servo to 90 degrees
     ServoMotor.write(90); // rotate the servo 90 degrees to lock
     // print a message on the Serial Monitor
