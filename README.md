@@ -2,7 +2,7 @@
 
 This repository contains my Arduino projects. I get started with fifteen projects from the Arduino Projects Book. I also make many DIY projects.
 
-See more on my blog about these projects at [Notes of PhiL](https://philectron.github.io/categories/#Arduino).
+See more on my blog about these projects at [Notes of PhiL](https://philectron.github.io/categories/#arduino).
 
 ## Preferences
 
