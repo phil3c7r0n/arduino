@@ -56,30 +56,30 @@ void loop() {
         Lcd.setCursor(0, 1);
 
         switch (reply) {
-            case 0:
-                Lcd.print("Absolutely");
-                break;
-            case 1:
-                Lcd.print("Probably");
-                break;
-            case 2:
-                Lcd.print("Maybe");
-                break;
-            case 3:
-                Lcd.print("Yep");
-                break;
-            case 4:
-                Lcd.print("Unsure");
-                break;
-            case 5:
-                Lcd.print("Foolish Question");
-                break;
-            case 6:
-                Lcd.print("Who knows");
-                break;
-            case 7:
-                Lcd.print("Impossible");
-                break;
+        case 0:
+            Lcd.print("Absolutely");
+            break;
+        case 1:
+            Lcd.print("Probably");
+            break;
+        case 2:
+            Lcd.print("Maybe");
+            break;
+        case 3:
+            Lcd.print("Yep");
+            break;
+        case 4:
+            Lcd.print("Unsure");
+            break;
+        case 5:
+            Lcd.print("Foolish Question");
+            break;
+        case 6:
+            Lcd.print("Who knows");
+            break;
+        case 7:
+            Lcd.print("Impossible");
+            break;
         }
     }
     prev_switch_val = switch_val;
