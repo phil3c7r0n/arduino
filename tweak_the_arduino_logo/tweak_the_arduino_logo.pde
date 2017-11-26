@@ -17,7 +17,7 @@ Serial MyPort;
 PImage logo;
 
 // Global constants
-final int BAUD_RATE       = 19200; // must be the same as the Arduino
+final int BAUD_RATE = 19200; // must be the same as the Arduino
 final String LOGO_ADDRESS = "http://www.arduino.cc/arduino_logo.png";
 
 // Global variables
