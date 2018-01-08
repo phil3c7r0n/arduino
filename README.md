@@ -4,7 +4,7 @@ This repository contains my Arduino projects. I get started with fifteen project
 
 See more on my blog about these projects at [Notes of PhiL](https://philectron.github.io/categories/#arduino).
 
-## Preferences
+## Customizing the IDE
 
 To customize the default sketchbook, edit [BareMinimum.ino](/preferences/BareMinimum/BareMinimum.ino). Next, copy to `%programfiles(x86)%\Arduino\examples\01.Basics\BareMinimum`. Replace the old file and mark the new file as **Read-only**.
 
